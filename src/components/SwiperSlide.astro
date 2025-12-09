@@ -1,0 +1,21 @@
+---
+const { Heading,Paragraph,BgImage } = Astro.props
+import Arrow from "../assets/images/button-arrow.svg"
+---
+
+
+<swiper-slide class=`h-full grid grid-cols-12 text-[#21292C] w-full items-center`>
+    <div class="lg:col-start-2 lg:col-span-6 lg:space-y-[30px] ">
+        <h1 class="font-bold lg:text-[70px] leading-[120%]">{Heading || ""}</h1>
+        <p class="font-medium lg:text-xl">{Paragraph || ""}</p>
+        <div class="w-fit">
+            <a href="/" class="rounded-full text-white flex space-x-2.5 py-3 px-5 w-fit items-center bg-[linear-gradient(90deg,#0FA1DB_0%,#5C2D91_100%)] font-semibold outline-none lg:font-xl">
+                <p>Explore More</p>
+                <img src={Arrow.src} alt="explore">
+            </a>
+        </div>
+        
+    </div>
+
+    <img class="col-span-4" src={BgImage.src} alt="Building high-end digital experience">
+</swiper-slide>

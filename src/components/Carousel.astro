@@ -1,0 +1,64 @@
+---
+import "../assets/css/swiper.css";
+import SwiperSlide from "../components/SwiperSlide.astro";
+import Slide1 from "../assets/images/slide1-bg.png";
+import LT from "../assets/images/larsen-and-toubro.png";
+import gift from "../assets/images/gift.png";
+import umbraco from "../assets/images/umbraco.png";
+import digitas from "../assets/images/digitas.png";
+---
+
+<swiper-container
+  class="mySwiper bg-[url('../assets/images/carousel-bg.png')] bg-white px-5 lg:px-10"
+  autoplay-delay="5000"
+  autoplay-disable-on-interaction="false"
+>
+  <SwiperSlide Heading="Building high-end digital experience" Paragraph="Giriraj Digital, a global digital consultancy, crafting solutions for more engaging and best performance user journey." BgImage={Slide1} />
+  
+  <SwiperSlide Heading="Solving Enterprise engineering challenges" Paragraph="Our technical engineering team empowers industry domain expertise and solves complex business needs with an organized ISO execution process." BgImage={Slide1} />
+
+  <SwiperSlide Heading="Unlock Digital Excellence with Our Azure Experts" Paragraph="Maximize your cloud potential with our seasoned experts. Streamline operations and drive innovation with tailored cloud solutions." BgImage={Slide1} />
+
+  <SwiperSlide Heading="Scale-up your application with AI" Paragraph="Implanting AI into business applications and digital products to boost productivity, growth, and achieve ROI 2X faster." BgImage={Slide1} />
+
+  <!-- TABS + PROGRESS BARS -->
+  <div class="grid grid-cols-12 w-full slide-tabs absolute bottom-40 z-30" slot="container-end">
+    <div class="col-start-2 col-span-12 flex gap-[30px]">
+      <div class="tab-item" data-index="0">
+        <span class="text-[#21292C]! lg:text-xl">Digital</span>
+        <div class="tab-progress"><div class="tab-progress-fill"></div></div>
+      </div>
+
+      <div class="tab-item" data-index="1">
+        <span class="text-[#21292C]! lg:text-xl">Engineering</span>
+        <div class="tab-progress"><div class="tab-progress-fill"></div></div>
+      </div>
+
+      <div class="tab-item" data-index="1">
+        <span class="text-[#21292C]! lg:text-xl">Cloud</span>
+        <div class="tab-progress"><div class="tab-progress-fill"></div></div>
+      </div>
+
+
+      <div class="tab-item" data-index="1">
+        <span class="text-[#21292C]! lg:text-xl">AI</span>
+        <div class="tab-progress"><div class="tab-progress-fill"></div></div>
+      </div>
+    </div>
+  </div>
+</swiper-container>
+
+
+<div class="grid grid-cols-12 absolute bottom-10  w-full z-100 px-5 lg:px-10">
+  <div class="col-start-2 col-span-10 flex justify-between items-center content-center">
+      <p class="text-[#211E3B] font-semibold">Trusted By Biggest Brands</p>
+      <div class="flex lg:space-x-14 xl:space-x-20 items-center">
+        <img src={LT.src} class="w-fit h-fit" alt="larsen and toubro">
+        <img src={digitas.src} class="w-fit h-fit" alt="digitas">
+        <img src={umbraco.src} class="w-fit h-fit" alt="umbraco">
+        <img src={gift.src} class="w-fit h-fit" alt="gujarat international finance tech city">
+      </div>
+  </div>
+</div>
+
+<script src="../assets/js/swiper.js"></script>
