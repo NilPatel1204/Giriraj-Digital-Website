@@ -1,0 +1,41 @@
+---
+const { BgImage, Cards = [] , SideImage } = Astro.props;
+---
+
+<div class="w-full bg-white">
+    <div
+        class="grid grid-cols-12 rounded-md bg-cover bg-center w-full lg:py-20"
+        style={`background-image: url('${BgImage.src}');`}
+    >
+        <div class="lg:col-start-2 lg:col-span-10 bg-white grid grid-cols-2 lg:gap-[60px] lg:p-10 rounded-3xl border-6 border-[#99BFD8]">
+        <div class="space-y-[23px]">
+            <div class="space-y-5">
+                <p class="text-[#0FA1DB]">Your Business Accelerator</p>
+                <h2 class="text-[#21292C] lg:text-5xl leading-[120%] font-bold">
+                    Trusted by 80+ clients globally in Digital Transformation Journey
+                </h2>
+                <p class="lg:text-lg text-black">
+                    Giriraj Digital is an Umbraco Gold Partner company specializing in building high-quality solutions...
+                </p>
+            </div>
+
+            {Cards.length > 0 && (
+            <div class="flex flex-wrap gap-4">
+                {Cards.map((item:any) => (
+                <img src={item.src} class="w-fit" alt="" />
+                ))}
+            </div>
+            )}
+
+        </div>
+        {SideImage && (
+            <img 
+                src={SideImage.src} 
+                class="" 
+                alt="Trusted by 80+ clients globally in Digital Transformation Journey"
+            />
+        )}
+        </div>
+
+    </div>
+</div>
