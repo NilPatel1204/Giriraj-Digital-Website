@@ -1,0 +1,119 @@
+/* container */
+#gallery {
+    display: flex;
+    width: 100%;
+    height: 277px;
+    /* keep your fixed height */
+    overflow: hidden;
+}
+
+/* card basics */
+.location-item {
+    position: relative;
+    height: 100%;
+    overflow: hidden;
+    cursor: pointer;
+    min-width: 0;
+    /* allow shrinking (important) */
+    transition: flex 0.45s ease, transform 0.45s ease, filter 0.45s ease;
+    flex: 1 1 25%;
+    /* default baseline */
+}
+
+/* inactive (normal) */
+.location-item:not(.active) {
+    flex: 1 1 25%;
+}
+
+/* active (expanded) */
+.location-item.active {
+    flex: 1 1 50%;
+    /* expanded size */
+    z-index: 2;
+    /* keep on top while expanded */
+}
+
+/* image niceties */
+.location-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.45s ease, filter 0.45s ease;
+    filter: grayscale(100%);
+}
+
+.location-item.active img {
+    transform: scale(1.05);
+    filter: grayscale(0%);
+}
+
+/* Bottom bar: FIXED HEIGHT always */
+.bottom-bar {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 16px 20px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    /* FIX: Align country to bottom ALWAYS */
+
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.6), transparent);
+    color: white;
+
+    height: 100px;
+    /* ⭐ FIX: lock the bottom section height */
+}
+
+/* Country & address */
+.bottom-bar .left {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+}
+
+/* Right — hidden initially */
+.location-item .right {
+    
+    opacity: 0;
+    transform: translateX(40px);
+    transition: all 0.5s ease;
+    transition-delay: 0s;
+    /* No delay when hiding */
+}
+
+/* Right — visible only after card fully expands */
+.location-item.active .right {
+    opacity: 1;
+    transform: translateX(0px);
+    transition-delay: 0.45s;
+    /* Show AFTER expansion */
+}
+
+.location-item {
+    transition: flex 0.5s ease;
+    flex: 0 0 25%;
+}
+
+.location-item.inactive {
+    flex: 0 0 25%;
+}
+
+.location-item.active {
+    flex: 0 0 50%;
+}
+
+
+/* ❗Stop right text animation when hover OUT */
+.location-item .right {
+    transition: none !important; /* Hide instantly */
+}
+
+/* ✅ Animate only when becoming active (hover IN) */
+.location-item.active .right {
+    opacity: 1;
+    transform: translateX(0);
+    transition: opacity 0.45s ease 0.35s, transform 0.45s ease 0.35s !important;
+}

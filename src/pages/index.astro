@@ -44,6 +44,7 @@ import AWSCertofication from "../assets/images/aws.png"
 import GoogleCertification from "../assets/images/google.png"
 import GlassdoorCertification from "../assets/images/glassdoor.png"
 import FAQs from '../components/FAQs.astro';
+import SolutionDelivered from '../components/SolutionDelivered.astro';
 
 
 
@@ -95,7 +96,11 @@ const faqList = [
             <CenterCardContainer BgImage={CenterCardBGImage} Cards={[GoldContribute, UmbracoMVP, GoldUmbraco]} SideImage={CenterCardSideImage} />
         </div>
 
-        <div class="px-5 lg:px-[30px] space-y-40">
+        <div class="px-5 lg:px-[30px] space-y-[60px] lg:space-y-40">
+
+            <!-- * Solutions Delivered -->
+            <SolutionDelivered />
+
             <!-- * Leverage The Microsoft Powerhouse To Elevate Your Digital Realm -->
             <section class=" grid grid-cols-12 gap-5 lg:gap-[30px]">
                 <div class="lg:col-start-2 lg:col-span-10 space-y-10 ">
@@ -172,12 +177,13 @@ const faqList = [
             <!-- * More About GIRIRAJ DIGITAL As Your Consulting Partner! -->
             <section>
                 <LeftSideCard BgImage={LeftCardBgImage} ButtonLink="/" SubTitle="Center of Excellence" Title="More About GIRIRAJ DIGITAL As Your Consulting Partner!" Paragraph={ParagraphContent} />
-                <div class="bg-[#E9F2FC]  bg-[url('../assets/images/rectangle.svg')] bg-no-repeat bg-position-[right_100px_center] rounded-b-[20px]">
+               <div class="bg-[#E9F2FC] bg-[url('../assets/images/rectangle.svg')] bg-no-repeat  bg-[position:calc(100%-10px)_calc(100%-20px)] bg-[length:120px]  lg:bg-[length:auto] lg:bg-[position:right_100px_center]  rounded-b-[20px]">
+
                     <div class="grid grid-cols-12 ">
-                        <div class="col-span-12 lg:col-start-2 py-5 lg:py-10 lg:col-span-10 lg:w-[70%] space-y-[30px]">
-                            <h2 class="text-[#21292C] lg:text-5xl leading-[120%] font-bold">Skyrocket your business success with the right tools and trusted partners!</h2>
+                        <div class="col-span-12 lg:col-start-2 p-5 lg:px-0 lg:py-10 lg:col-span-10 lg:w-[70%] space-y-[30px]">
+                            <h2 class="text-[#21292C] text-[26px] lg:text-5xl leading-[120%] font-bold">Skyrocket your business success with the right tools and trusted partners!</h2>
                             <div class="w-fit">
-                                <a href="/" class="rounded-full text-white flex space-x-2.5 py-2.5  px-6 w-fit items-center bg-[linear-gradient(90deg,#0FA1DB_0%,#5C2D91_100%)] font-semibold outline-none lg:font-xl">
+                                <a href="/" class="rounded-full text-white flex space-x-2.5 py-2 px-3 lg:py-2.5  lg:px-6 w-fit items-center bg-[linear-gradient(90deg,#0FA1DB_0%,#5C2D91_100%)] font-semibold outline-none lg:font-xl">
                                     <p>Connect Now</p>
                                     <img src={Arrow.src} alt="explore">
                                 </a>
