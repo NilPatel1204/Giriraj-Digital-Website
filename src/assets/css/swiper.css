@@ -13,11 +13,19 @@
   }
 
   /* For lg screens and above (≥1024px) */
-  @media (min-width: 1024px) {
+  @media (min-width: 1280px) {
 
     swiper-container,
     testimonial-swiper-container {
-      height: 100vh;
+      height: 100vh !important;
+    }
+  }
+
+    @media (min-width: 1024px) {
+
+    swiper-container,
+    testimonial-swiper-container {
+      height: 80vh;
     }
   }
 

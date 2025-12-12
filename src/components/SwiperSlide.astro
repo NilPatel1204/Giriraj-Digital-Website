@@ -6,7 +6,7 @@ import LinkButton from "./LinkButton.astro"
 
 
 <swiper-slide class=`h-full grid grid-cols-12 text-[#21292C] w-full items-center`>
-    <div class="order-2 lg:order-1 col-span-12 lg:col-start-2 lg:col-span-6 space-y-5 lg:space-y-[30px] ">
+    <div class="order-2 md:order-1 col-span-12 lg:col-start-2 md:col-span-6 space-y-5 lg:space-y-[30px] ">
         <h1 class="font-bold text-[32px] lg:text-[70px] leading-[120%]">{Heading || ""}</h1>
         <p class="font-medium lg:text-xl">{Paragraph || ""}</p>
         <div class="w-fit pt-2.5 lg:pt-0">
@@ -15,5 +15,5 @@ import LinkButton from "./LinkButton.astro"
         
     </div>
 
-    <img class="col-span-12 order-1 lg:order-2 lg:col-span-4 pb-[60px] lg:pb-0" src={BgImage.src} alt="Building high-end digital experience">
+    <img class="col-span-12 order-1 md:order-2 md:col-span-6 lg:col-span-4 pb-[60px] md:pb-0" src={BgImage.src} alt="Building high-end digital experience">
 </swiper-slide>
