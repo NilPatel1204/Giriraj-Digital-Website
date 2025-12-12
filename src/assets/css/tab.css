@@ -1,37 +1,3 @@
-/* 
-.tabs-item.active .tabs-progress {
-    opacity: 1;
-}
-
-.tabs-progress {
-    opacity: 0;
-    transition: opacity 0.3s;
-}
-
-.tabs-item.active .tabs-progress {
-    opacity: 1;
-}
-
-.tabs-progress {
-    opacity: 0.4;
-    width: 0%;
-    height: 3px;
-    background: #0fa1db;
-}
-
-
-.tabs-item img {
-    opacity: 0;
-    transform: translateX(-5px);
-    transition: all 0.3s ease;
-}
-
-.tabs-item.active img {
-    opacity: 1;
-    transform: translateX(0);
-} */
-
-
 /* Hide icon by default */
 .tabs-item img {
     opacity: 0;
@@ -45,17 +11,17 @@
     transform: translateX(0);
 }
 
-/* Progress bar – default state (NON ACTIVE) */
+/* Progress bar default */
 .tabs-item .tabs-progress {
-    opacity: 1;               /* Always visible */
-    width: 100%;              /* Full width */
+    opacity: 1;
+    width: 100%;
     height: 3px;
-    background-color: rgba(44, 54, 58, 0.2); /* Light color */
+    background-color: rgba(44, 54, 58, 0.2);
     transition: all 0.3s ease;
 }
 
-/* Progress bar – active state */
+/* Progress bar active */
 .tabs-item.active .tabs-progress {
-    background-color: #0FA1DB; /* Full color */
+    background-color: #0FA1DB;
     opacity: 1;
 }

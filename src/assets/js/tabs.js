@@ -1,61 +1,64 @@
 const tabs = document.querySelectorAll(".tabs-item");
 const tabImage = document.getElementById("tab-image");
-
 let currentIndex = 0;
-const intervalTime = 7000; // 7 seconds
+const intervalTime = 7000;
 let autoplayInterval;
 
-// Activate a tab by index
 function activateTab(index) {
     currentIndex = index;
 
-    tabs.forEach((tab, i) => {
-        const progress = tab.querySelector(".tabs-progress");
+    tabs.forEach(tab => {
+        const progresses = tab.querySelectorAll(".tabs-progress");
+        const mobileImage = tab.querySelector(".mobile-image");
 
-        // Reset classes
         tab.classList.remove("active");
         tab.classList.add("opacity-70");
 
-        // Reset progress bar instantly for all tabs
-        progress.style.transition = "none";
-        progress.style.width = "100%"; // keep inactive full width
-        progress.style.backgroundColor = "rgba(44, 54, 58, 0.2)";
+        // Hide mobile image if tab is inactive
+        if (mobileImage) mobileImage.style.display = "none";
+
+        // Reset progress bars
+        progresses.forEach(p => {
+            p.style.transition = "none";
+            p.style.width = "100%";
+            p.style.backgroundColor = "rgba(44, 54, 58, 0.2)";
+        });
     });
 
     const activeTab = tabs[index];
     activeTab.classList.add("active");
     activeTab.classList.remove("opacity-70");
 
-    // Update image
-    tabImage.src = activeTab.dataset.image;
+    // Show mobile image for active tab
+    const activeMobileImage = activeTab.querySelector(".mobile-image");
+    if (activeMobileImage) activeMobileImage.style.display = "block";
 
-    // Animate active progress bar
-    const activeProgress = activeTab.querySelector(".tabs-progress");
+    // Update desktop image
+    if (tabImage) tabImage.src = activeTab.dataset.image;
 
-    // Start from 0% instantly
-    activeProgress.style.transition = "none";
-    activeProgress.style.width = "0%";
-    activeProgress.style.backgroundColor = "#0FA1DB";
-
-    // Trigger the transition after tiny delay
-    setTimeout(() => {
-        activeProgress.style.transition = `${intervalTime}ms linear`;
-        activeProgress.style.width = "100%";
-    }, 50); // 50ms ensures transition is applied
+    // Animate progress bars
+    const activeProgresses = activeTab.querySelectorAll(".tabs-progress");
+    activeProgresses.forEach(progress => {
+        progress.style.transition = "none";
+        progress.style.width = "0%";
+        progress.style.backgroundColor = "#0FA1DB";
+        setTimeout(() => {
+            progress.style.transition = `${intervalTime}ms linear`;
+            progress.style.width = "100%";
+        }, 50);
+    });
 }
 
-// Autoplay next tab
+// Autoplay
 function nextTab() {
     currentIndex = (currentIndex + 1) % tabs.length;
     activateTab(currentIndex);
 }
 
-// Start autoplay
 function startAutoplay() {
     autoplayInterval = setInterval(nextTab, intervalTime);
 }
 
-// Stop & restart autoplay on user click
 tabs.forEach((tab, index) => {
     tab.addEventListener("click", () => {
         clearInterval(autoplayInterval);
@@ -64,6 +67,16 @@ tabs.forEach((tab, index) => {
     });
 });
 
-// Start first tab + autoplay
+// Initial activation
 activateTab(0);
 startAutoplay();
+
+// Handle viewport changes
+let isDesktop = window.innerWidth >= 1024;
+window.addEventListener("resize", () => {
+    const nowDesktop = window.innerWidth >= 1024;
+    if (nowDesktop !== isDesktop) {
+        isDesktop = nowDesktop;
+        activateTab(currentIndex);
+    }
+});
