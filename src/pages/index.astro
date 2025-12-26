@@ -4,7 +4,6 @@ import Layout from '../layouts/Layout.astro';
 // Components
 import Carousel from '../components/Carousel.astro';
 import CenterCardContainer from "../components/CenterCardContainer.astro";
-import Card from "../components/Card.astro";
 import SectionTitle from '../components/SectionTitle.astro';
 import NumberCards from '../components/NumberCards.astro';
 import LeftSideCard from "../components/LeftSideCard.astro";
@@ -36,19 +35,18 @@ import NumberCard2 from "../assets/images/numbercard-bg-2.webp";
 import NumberCard3 from "../assets/images/numbercard-bg-3.webp";
 import NumberCard4 from "../assets/images/numbercard-bg-4.webp";
 import LeftCardBgImage from "../assets/images/giriraj-digital-as-your-consulting-partner-bg-image.png";
-import Arrow from "../assets/images/button-arrow.svg"
 import CertificationBG from "../assets/images/certification-bg.webp"
 import MSCertofication from "../assets/images/microsoft-certification.png"
 import UmbracoMVPCertification from "../assets/images/umbraco-mvp-certification.png"
 import AWSCertofication from "../assets/images/aws.png"
 import GoogleCertification from "../assets/images/google.png"
 import GlassdoorCertification from "../assets/images/glassdoor.png"
-import FAQs from '../components/FAQs.astro';
 import SolutionDelivered from '../components/SolutionDelivered.astro';
-import LinkButton from '../components/LinkButton.astro';
 import SwipeUpCard from '../components/SwipeUpCard.astro';
 import ContactNowHeading from '../components/ContactNowHeading.astro';
 import FaqContainer from '../components/FaqContainer.astro';
+import ContactUsImage from "../assets/images/contact-us-left-side-image.webp"
+import ContactUsBgImage from "../assets/images/contact-us-bg.webp"
 
 const cards = [
     {
@@ -187,11 +185,9 @@ const faqList = [
         <Testimonial />
 
         <!-- * Form -->
-        <ContactUsForm />
+        <ContactUsForm Image={ContactUsImage} BgImage={ContactUsBgImage} />
 
         <!-- * FAQ -->
         <FaqContainer FaqList={faqList}  />
 
-
-    <script src="../assets/js/faq.js"></script>
 </Layout>
