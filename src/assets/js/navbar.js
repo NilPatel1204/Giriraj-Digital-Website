@@ -1,3 +1,5 @@
+
+
 document.querySelectorAll('[data-dropdown-toggle]').forEach(trigger => {
 
   const isDesktop = window.matchMedia('(min-width: 1024px)').matches;
@@ -44,99 +46,95 @@ document.querySelectorAll('[data-dropdown-toggle]').forEach(trigger => {
   });
 });
 
+// ===============================
+// ELEMENTS
+// ===============================
+const mobileMenuBtn = document.querySelector('[data-collapse-toggle="navbar-cta"]');
+const mobileMenu = document.getElementById('navbar-cta');
+const iconOpen = document.getElementById('icon-open');
+const iconClose = document.getElementById('icon-close');
 
-// // Mobile dropdown: Who we are
-// const whoBtn = document.getElementById('mobileWhoBtn');
-// const whoDropdown = document.getElementById('who-we-are-mobile');
-// const whoArrow = document.getElementById('who-arrow');
+let isMenuOpen = false;
+let ignoreNextOutside = false;
 
-// if (whoBtn && whoDropdown) {
-//   whoBtn.addEventListener('click', (e) => {
-//     e.preventDefault();
-//     whoDropdown.classList.toggle('hidden');
-//     whoArrow?.classList.toggle('rotate-180');
-//   });
-// }
+// ===============================
+// BODY SCROLL LOCK
+// ===============================
+function lockBodyScroll(lock) {
+  document.body.style.overflow = lock ? 'hidden' : '';
+}
 
+// ===============================
+// OPEN / CLOSE MENU (NO TOGGLE INSIDE)
+// ===============================
+function openMobileMenu() {
+  mobileMenu.classList.remove('hidden');
+  iconOpen.classList.add('hidden');
+  iconClose.classList.remove('hidden');
+  mobileMenuBtn.setAttribute('aria-expanded', 'true');
+  lockBodyScroll(true);
+  isMenuOpen = true;
+}
 
-// // Mobile dropdown: What we do
-// const whatBtn = document.getElementById('mobileWhatBtn');
-// const whatDropdown = document.getElementById('what-we-do-mobile');
-// const whatArrow = document.getElementById('what-arrow');
+function closeMobileMenu() {
+  mobileMenu.classList.add('hidden');
+  iconOpen.classList.remove('hidden');
+  iconClose.classList.add('hidden');
+  mobileMenuBtn.setAttribute('aria-expanded', 'false');
+  lockBodyScroll(false);
 
-// if (whatBtn && whatDropdown) {
-//   whatBtn.addEventListener('click', (e) => {
-//     e.preventDefault();
-//     whatDropdown.classList.toggle('hidden');
-//     whatArrow?.classList.toggle('rotate-180');
-//   });
-// }
+  closeAll();
+  clearActiveButtons();
 
+  isMenuOpen = false;
+}
 
-// // Resources dropdown: What we do
-// const resourcesBtn = document.getElementById('mobileResourceBtn');
-// const resourcesDropdown = document.getElementById('resources-mobile');
-// const resourcesArrow = document.getElementById('resources-arrow');
+// ===============================
+// HAMBURGER CLICK (ONLY TOGGLE PLACE)
+// ===============================
+mobileMenuBtn.addEventListener('click', (e) => {
+  e.stopPropagation();
+  ignoreNextOutside = true;
 
-// if (resourcesBtn && resourcesDropdown) {
-//   resourcesBtn.addEventListener('click', (e) => {
-//     e.preventDefault();
-//     resourcesDropdown.classList.toggle('hidden');
-//     resourcesArrow?.classList.toggle('rotate-180');
-//   });
-// }
+  if (isMenuOpen) {
+    closeMobileMenu();
+  } else {
+    openMobileMenu();
+  }
 
+  // allow outside click again AFTER this tick
+  setTimeout(() => {
+    ignoreNextOutside = false;
+  }, 0);
+});
 
-// // Industry dropdown: What we do
-// const industriesBtn = document.getElementById('industries-served');
-// const industriesDropdown = document.getElementById('industries-served-mobile');
-// const industriesArrow = document.getElementById('industries-arrow');
+// ===============================
+// OUTSIDE CLICK (POINTERDOWN – VERY IMPORTANT)
+// ===============================
+// document.addEventListener('pointerdown', (e) => {
+//   if (window.innerWidth >= 1024) return;
+//   if (!isMenuOpen) return;
+//   if (ignoreNextOutside) return;
 
-// if (industriesBtn && industriesDropdown) {
-//   industriesBtn.addEventListener('click', (e) => {
-//     e.preventDefault();
-//     industriesDropdown.classList.toggle('hidden');
-//     industriesArrow?.classList.toggle('rotate-180');
-//   });
-// }
+//   if (
+//     mobileMenu.contains(e.target) ||
+//     e.target.closest('[data-collapse-toggle="navbar-cta"]')
+//   ) return;
 
-
-// // Services dropdown: What we do
-// const serviceBtn = document.getElementById('services-served');
-// const serviceDropdown = document.getElementById('services-served-mobile');
-// const serviceArrow = document.getElementById('services-arrow');
-
-// if (serviceBtn && serviceDropdown) {
-//   serviceBtn.addEventListener('click', (e) => {
-//     e.preventDefault();
-//     serviceDropdown.classList.toggle('hidden');
-//     serviceArrow?.classList.toggle('rotate-180');
-//   });
-// }
-
-
-// // Technology Partnership dropdown: What we do
-// const techPartnerBtn = document.getElementById('technology-partnership');
-// const techPartnerDropdown = document.getElementById('technology-partnership-mobile');
-// const techPartnerArrow = document.getElementById('technology-partnership-arrow');
-
-// if (techPartnerBtn && techPartnerDropdown) {
-//   techPartnerBtn.addEventListener('click', (e) => {
-//     e.preventDefault();
-//     techPartnerDropdown.classList.toggle('hidden');
-//     techPartnerArrow?.classList.toggle('rotate-180');
-//   });
-// }
+//   closeMobileMenu();
+// });
 
 
 // ===============================
-// MOBILE MENU LOGIC (LEVEL-WISE)
+// UTILITIES
 // ===============================
-
-// Utility helpers
 function closeAll(except = null) {
   document.querySelectorAll('.mobile-dropdown').forEach(el => {
     if (el !== except) el.classList.add('hidden');
+  });
+
+  document.querySelectorAll('.inner-dropdown').forEach(el => {
+    el.classList.add('hidden');
   });
 
   document.querySelectorAll('.mobile-arrow').forEach(arrow => {
@@ -144,84 +142,80 @@ function closeAll(except = null) {
   });
 }
 
-
 function clearActiveButtons(scope = document) {
-  scope.querySelectorAll('.active-dropdown')
+  scope
+    .querySelectorAll('.active-dropdown')
     .forEach(btn => btn.classList.remove('active-dropdown'));
 }
 
-// -------------------------------
-// LEVEL 1 — TOP LEVEL DROPDOWNS
-// -------------------------------
+// ===============================
+// LEVEL 1 — TOP DROPDOWNS
+// ===============================
 function setupTopLevel(buttonId, dropdownId, arrowId) {
   const btn = document.getElementById(buttonId);
   const dropdown = document.getElementById(dropdownId);
   const arrow = document.getElementById(arrowId);
 
-  if (!btn || !dropdown) return;
+  if (!btn || !dropdown || !arrow) return;
 
   btn.addEventListener('click', (e) => {
     e.preventDefault();
+    e.stopPropagation();
 
     const isOpen = !dropdown.classList.contains('hidden');
 
-    // Close all dropdowns
+    // Reset everything first
     closeAll();
     clearActiveButtons();
 
-    if (!isOpen) {
-      dropdown.classList.remove('hidden');
-      arrow?.classList.add('rotate-180');
-      btn.classList.add('active-dropdown');
+    if (isOpen) return;
 
-      // Reset inner dropdowns
-      dropdown.querySelectorAll('.inner-dropdown').forEach(d => d.classList.add('hidden'));
-      dropdown.querySelectorAll('.inner-arrow').forEach(a => a.classList.remove('rotate-180'));
-      clearActiveButtons(dropdown);
-    }
+    // Open current
+    dropdown.classList.remove('hidden');
+    arrow.classList.add('rotate-180');
+    btn.classList.add('active-dropdown');
   });
 }
 
-// -------------------------------
+// ===============================
 // LEVEL 2 — INNER DROPDOWNS
-// -------------------------------
+// ===============================
 function setupInner(buttonId, dropdownId, arrowId, parentId) {
   const btn = document.getElementById(buttonId);
   const dropdown = document.getElementById(dropdownId);
   const arrow = document.getElementById(arrowId);
   const parent = document.getElementById(parentId);
 
-  if (!btn || !dropdown || !parent) return;
+  if (!btn || !dropdown || !arrow || !parent) return;
 
   btn.addEventListener('click', (e) => {
     e.preventDefault();
+    e.stopPropagation();
 
     const isOpen = !dropdown.classList.contains('hidden');
 
-    // Close sibling inner dropdowns
+    // Close siblings
     parent.querySelectorAll('.inner-dropdown').forEach(d => {
       if (d !== dropdown) d.classList.add('hidden');
     });
 
-    parent.querySelectorAll('.inner-arrow').forEach(a => {
+    parent.querySelectorAll('.mobile-arrow').forEach(a => {
       if (a !== arrow) a.classList.remove('rotate-180');
     });
 
     clearActiveButtons(parent);
 
-    // Toggle current
-    if (!isOpen) {
-      dropdown.classList.remove('hidden');
-      arrow?.classList.add('rotate-180');
-      btn.classList.add('active-dropdown');
-    } else {
+    if (isOpen) {
       dropdown.classList.add('hidden');
-      arrow?.classList.remove('rotate-180');
+      arrow.classList.remove('rotate-180');
       btn.classList.remove('active-dropdown');
+    } else {
+      dropdown.classList.remove('hidden');
+      arrow.classList.add('rotate-180');
+      btn.classList.add('active-dropdown');
     }
   });
 }
-
 
 // ===============================
 // INIT — TOP LEVEL
@@ -231,7 +225,7 @@ setupTopLevel('mobileWhatBtn', 'what-we-do-mobile', 'what-arrow');
 setupTopLevel('mobileResourceBtn', 'resources-mobile', 'resources-arrow');
 
 // ===============================
-// INIT — INNER (WHAT WE DO)
+// INIT — INNER LEVEL
 // ===============================
 setupInner(
   'industries-served-area',
@@ -253,7 +247,6 @@ setupInner(
   'technology-partnership-arrow',
   'what-we-do-mobile'
 );
-
 
 setupInner(
   'case-study-area',
