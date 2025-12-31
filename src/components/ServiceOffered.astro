@@ -172,9 +172,10 @@ function updateRightContent(tab) {
         const row = document.createElement("div");
         row.className = "flex items-start gap-3";
         row.innerHTML = `
-            <img src="/src/assets/images/li-icon.png" class="shrink-0" />
-            <p class="text-[#2C363A] lg:text-lg leading-[150%]">${text}</p>
-        `;
+        <img src="/li-icon.png" class="shrink-0" />
+        <p class="text-[#2C363A] lg:text-lg leading-[150%]">${text}</p>
+    `;
+
 
         if (tabList) tabList.appendChild(row.cloneNode(true));
 
