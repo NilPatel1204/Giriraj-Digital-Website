@@ -1,0 +1,63 @@
+---
+import Icon1 from "../assets/images/imageicon1.png"
+import Icon2 from "../assets/images/imageicon2.png"
+import Icon3 from "../assets/images/imageicon3.png"
+import Icon4 from "../assets/images/imageicon4.png"
+import Icon5 from "../assets/images/imageicon5.png"
+import Icon6 from "../assets/images/imageicon6.png"
+import Icon7 from "../assets/images/imageicon7.png"
+import Icon8 from "../assets/images/imageicon8.png"
+
+const List = [
+    {
+        image: Icon1,
+        title: "Defining clear and measurable sustainability objectives, guiding our actions towards meaningful impact"
+    },
+    {
+        image: Icon2,
+        title: "Embedding environmentally-conscious practices into our day-to-day business operations, minimizing our ecological footprint."
+    },
+    {
+        image: Icon3,
+        title: "Fostering an inclusive culture that encourages open dialogue and embraces diverse perspectives, fueling innovation and creativity."
+    },
+    {
+        image: Icon4,
+        title: "Empowering our team members through purpose-driven initiatives, providing opportunities for personal and professional growth."
+    },
+    {
+        image: Icon5,
+        title: "Forging resilient partnerships with suppliers and stakeholders who share our commitment to ethical practices and responsible business conduct."
+    },
+    {
+        image: Icon6,
+        title: "Monitoring and evaluating our progress towards achieving our purpose-led goals, ensuring accountability and transparency."
+    },
+    {
+        image: Icon7,
+        title: "Investing in research and development to pioneer new sustainable technologies and practices, pushing the boundaries of possibility."
+    },
+    {
+        image: Icon8,
+        title: "Continuously evolving and adapting our strategies in response to changing societal needs and environmental challenges, remaining agile and forward-thinking in our approach."
+    },
+]
+
+---
+
+<section class="section-container grid grid-cols-12 gap-5 lg:gap-[30px]">
+    <div class="col-span-12 lg:col-start-2 lg:col-span-10 space-y-[30px] lg:space-y-[60px] grid grid-cols-12 lg:grid-cols-10 lg:gap-[30px]">
+        <h2 class="text-[#21292C] text-[26px] lg:text-5xl leading-[120%] font-bold col-span-12 lg:col-span-7">Our purpose-driven approach enables our Digital transformation company to</h2>
+
+        <div class="col-span-12 grid grid-cols-1 lg:grid-cols-2 gap-5 lg:gap-[30px] lg:col-start-3 lg:col-span-8">
+            {
+                List.map((item: any, index: number) => (
+                    <div class="flex items-start rounded-[20px] p-5 lg:p-[30px] bg-[#E9F2FC] gap-5 lg:gap-[30px]" >
+                        <img src={item.image.src} alt={item.title || "item icon"} class="shrink-0" />
+                        <p class="font-semibold lg:text-lg text-[#2C363A]"> {item.title} </p>
+                    </div>
+                ))
+            }
+        </div>
+    </div>
+</section>

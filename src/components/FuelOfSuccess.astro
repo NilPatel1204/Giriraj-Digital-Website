@@ -1,0 +1,47 @@
+---
+const SuccessList = [
+    {
+        count: "100+",
+        text: "Happy Customers"
+    },
+    {
+        count: "250+",
+        text: "Completed Projects"
+    },
+    {
+        count: "55+",
+        text: "Skilled Professionals"
+    },
+    {
+        count: "95%",
+        text: "Customer Satisfaction"
+    },
+    {
+        count: "17+",
+        text: "Countries Served"
+    },
+    {
+        count: "10+",
+        text: "Years of Experience"
+    },
+]
+---
+
+<section class="section-container w-full bg-white grid grid-cols-12 gap-5 lg:gap-[30px]">
+    <div class="space-y-[30px] 2xl:space-y-0 col-span-12 lg:col-span-10 lg:col-start-2 p-5 md:p-10 lg:p-20 grid grid-cols-10 rounded-3xl bg-[url('../assets/images/fuel-of-success-bg.webp')]">
+        <div class="col-span-10 2xl:col-span-4 space-y-1.5 lg:space-y-3.5 lg:w-[80%]">
+            <p class="font-semibold lg:text-xl text-[#0FA1DB]">Fuel of Success</p>
+            <h2 class="text-[26px] text-[#212529] lg:text-5xl leading-[120%] font-bold">The Metrics Driving Giriraj Digital's Growth!</h2>
+            <p class="text-[#0D0D0D] font-semibold leading-[150%] lg:text-lg">Our digital solutions company is fueled by the numbers that define our journey… </p>
+        </div>
+
+        <div class={`col-span-10 2xl:col-span-6 h-fit grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3  gap-10 lg:gap-x-[50px] lg:gap-y-[60px]`}>
+            {SuccessList.map((item:any) => (
+                <div class="p-4 bg-white outline-3 lg:outline-8 outline-[rgba(0,62,135,0.1)] rounded-[20px] space-y-2">
+                    <h4 class="text-[#0A698F] text-5xl lg:text-[56px] font-bold">{item.count}</h4>
+                    <p class="font-semibold">{item.text}</p>
+                </div>
+            ))}
+        </div>
+    </div>
+</section>
