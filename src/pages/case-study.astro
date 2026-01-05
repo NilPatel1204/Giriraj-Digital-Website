@@ -1,0 +1,200 @@
+---
+import Layout from "../layouts/Layout.astro";
+import HeroSection from "../components/HeroSection.astro";
+import CaseStudyCard from "../components/CaseStudyCard.astro";
+
+import HeroBg from "../assets/images/case-study-bg.webp"
+import TicketBookingSystem  from "../assets/images/ticket-booking-system-case.webp"
+import MultivendorEcommerce from "../assets/images/multivendor-ecommerce-portal.webp"
+import TravelAndTourism from "../assets/images/travel-and-tourism-portal.webp"
+import AiSalesAutomation from "../assets/images/ai-sales-automation-platform.webp"
+import MultivendorInsurance from "../assets/images/multivendor-insurance-portal.webp"
+import HealthCounseling from "../assets/images/health-counseling-web-application.webp"
+import Newsletter from "../components/Newsletter.astro";
+import BgImage from "../assets/images/tags-bg.webp"
+
+const CaseStudies = [
+    {
+        Image: TicketBookingSystem,
+        Tag: "Media & Entertainment",
+        Name: "Ticket Booking System",
+        Description: "Shubak Cinema revolutionizes movie ticket booking with an interactive experience. Ismael aims for a multi-vendor system, offering remote ticketing with customizable seat layouts.",
+        Link: "/"
+    },
+    {
+        Image: HealthCounseling,
+        Tag: "Healthcare",
+        Name: "Health Counselling Web Application",
+        Description: "The Counselling & Psychotherapy Community is a professional membership organization and registered charity in the UK. Its mission is to promote the role and value of counseling and psychotherapy in improving emotional well-being and mental health. The Web Application is a key tool used by the organization to provide information and resources for both professionals and the general public.",
+        Link: "/"
+    },
+    {
+        Image: MultivendorInsurance,
+        Tag: "Insurance",
+        Name: "Multivendor Insurance Portal",
+        Description: "Streamline insurance management with our MultiVendor Insurance Portal, offering a seamless user experience and essential features for policy management and updates.",
+        Link: "/"
+    },
+    {
+        Image: AiSalesAutomation,
+        Tag: "AI Automation",
+        Name: "AI Sales Automation Platform",
+        Description: "Revolutionize your sales operations with our advanced AI-driven platform, designed to enhance efficiency and boost productivity. Transform your business strategies and achieve unprecedented sales success today.",
+        Link: "/"
+    },
+    {
+        Image: TravelAndTourism,
+        Tag: "Travel & Tourism",
+        Name: "Travel & Tourism Portal",
+        Description: "Discover diverse holiday packages worldwide, including flights, hotels, and activities, on our user-friendly platform. Simplify your holiday planning with easy search and booking features tailored to your preferences.",
+        Link: "/"
+    },
+    {
+        Image: MultivendorEcommerce,
+        Tag: "E Commerce",
+        Name: "Multivendor ECommerce Portal",
+        Description: "Our client has his own eCommerce Company, established in Ahmedabad which operates as an organization selling products over the internet with franchising with multiple vendors.",
+        Link: "/"
+    },
+]
+
+---
+
+<Layout>
+    <!-- * Hero Section -->
+    <HeroSection HeroImage={HeroBg},  SubTitle="Our Portfolio" , Title="Case studies", Paragraph="We work with international clients, both big and small. Flick through some of our finest moments to quickly discover how we go the extra mile and what we can do to grow your business online." />
+
+    <!-- * Tabs -->
+    <section class="section-container mt-0! grid grid-cols-12  pt-10 px-10 lg:pt-20 lg:px-20 bg-[url('../assets/images/tags-bg.webp')] bg-no-repeat bg-x-cover">
+        <div class="col-span-12 lg:col-start-2 lg:col-span-10 space-y-10 xl:space-y-20 ">
+            <div class="flex flex-col lg:flex-row space-y-6 lg:space-y-0 space-x-[38px]">
+                <h2 class="text-[#21292C] text-[26px] lg:text-5xl leading-[120%] font-bold lg:w-[20%] h-fit">Select your Industry</h2> 
+                <div class="flex flex-wrap gap-2 lg:gap-4 text-sm lg:text-base h-fit lg:w-[80%]" id="filterButtons">
+                    <button data-tag="ALL" class="filter-btn active">ALL</button>
+                    <button data-tag="AI Automation" class="filter-btn">AI Automation</button>
+                    <button data-tag="Auto Mobile" class="filter-btn">Auto Mobile</button>
+                    <button data-tag="E Commerce" class="filter-btn">E Commerce</button>
+                    <button data-tag="Healthcare" class="filter-btn">Healthcare</button>
+                    <button data-tag="Insurance" class="filter-btn">Insurance</button>
+                    <button data-tag="Marine" class="filter-btn">Marine</button>
+                    <button data-tag="Media & Entertainment" class="filter-btn">Media & Entertainment</button>
+                    <button data-tag="Real Estate" class="filter-btn">Real Estate</button>
+                    <button data-tag="Retail & Hospitality" class="filter-btn">Retail & Hospitality</button>
+                    <button data-tag="Travel & Tourism" class="filter-btn">Travel & Tourism</button>
+                </div>
+
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-20" id="caseStudyGrid">
+            {
+                CaseStudies.map((item: any) => (
+                    <div class="case-card" data-tag={item.Tag}>
+                        <CaseStudyCard Image={item.Image} Name={item.Name} Tag={item.Tag} Description={item.Description} Link={item.Link} />
+                    </div>
+                ))
+            }
+            </div>
+
+
+            <button id="loadMoreBtn" class="rounded-[40px] text-[#0FA1DB] bg-[#E9F2FC] text-center w-full font-semibold text-lg lg:text-xl py-3 cursor-pointer">Load More</button>
+        </div>
+    </section>
+
+    <!-- * Newsletter -->
+    <Newsletter />
+
+
+<style>
+    .filter-btn {
+        border: 1px solid #0FA1DB;
+        border-radius: 40px;
+        padding: 8px 20px;
+        font-weight: 600;
+        color: rgba(13, 13, 13, 0.7);
+        cursor: pointer;
+        transition: all 0.3s ease;
+    }
+
+    .filter-btn.active {
+        background-color: #0FA1DB;
+        color: white;
+    }
+</style>
+
+<script is:inline>
+    const buttons = document.querySelectorAll(".filter-btn");
+    const cards = document.querySelectorAll(".case-card");
+    const loadMoreBtn = document.getElementById("loadMoreBtn");
+
+    let selectedTags = ["ALL"];
+    let visibleCount = 4;
+
+    function updateCards() {
+        let matchedCards = [];
+
+        cards.forEach(card => {
+        const tag = card.dataset.tag;
+
+        const match =
+            selectedTags.includes("ALL") || selectedTags.includes(tag);
+
+        card.style.display = match ? "block" : "none";
+
+        if (match) matchedCards.push(card);
+        });
+
+        // Load More logic
+        matchedCards.forEach((card, index) => {
+        card.style.display = index < visibleCount ? "block" : "none";
+        });
+
+        loadMoreBtn.style.display =
+        matchedCards.length > visibleCount ? "block" : "none";
+    }
+
+    buttons.forEach(btn => {
+        btn.addEventListener("click", () => {
+        const tag = btn.dataset.tag;
+
+        if (tag === "ALL") {
+            selectedTags = ["ALL"];
+            buttons.forEach(b => b.classList.remove("active"));
+            btn.classList.add("active");
+        } else {
+            selectedTags = selectedTags.filter(t => t !== "ALL");
+
+            btn.classList.toggle("active");
+
+            if (btn.classList.contains("active")) {
+            selectedTags.push(tag);
+            } else {
+            selectedTags = selectedTags.filter(t => t !== tag);
+            }
+
+            if (selectedTags.length === 0) {
+            selectedTags = ["ALL"];
+            document
+                .querySelector('[data-tag="ALL"]')
+                .classList.add("active");
+            }
+
+            document
+            .querySelector('[data-tag="ALL"]')
+            .classList.remove("active");
+        }
+
+        visibleCount = 4;
+        updateCards();
+        });
+    });
+
+    loadMoreBtn.addEventListener("click", () => {
+        visibleCount += 4;
+        updateCards();
+    });
+
+    // Initial load
+    updateCards();
+</script>
+
+</Layout>
