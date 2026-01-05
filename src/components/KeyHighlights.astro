@@ -65,28 +65,28 @@ const Image2018 = [ Image2020_1, Image2018_3, Image2018_4, Image2018_5, Image201
 ---
 
 <section class="section-container grid grid-cols-12 gap-5 lg:gap-[30px]">
-    <div class="col-span-12 lg:col-start-2 lg:col-span-10 space-y-[30px]">
+    <div class="col-span-12 lg:col-start-2 lg:col-span-10 space-y-[30px] lg:space-y-[60px]">
         <SectionTitle Title="Unlocking Excellence" Heading="Key Highlights About Us!" />
 
         <div class="grid grid-cols-12 gap-5 lg:gap-[30px]">
             <!-- LEFT YEARS -->
             <div class="col-span-12 lg:col-span-2  content-center items-center">
             <ul
-  id="yearTabs"
-  class="
-    relative
-    flex flex-row gap-8            /* ✅ mobile row */
-    lg:flex-col lg:space-y-20      /* ✅ desktop column */
-    pl-0 lg:pl-6
-    py-4 lg:py-10
-    overflow-x-auto lg:overflow-y-auto
-    scroll-smooth
-    lg:h-80
-    lg:bg-[url('../assets/images/horizontal-line.webp')]
-    lg:bg-no-repeat
-    lg:bg-position-[left_13px_top_0px]
-  "
->
+            id="yearTabs"
+            class="
+              relative
+              flex flex-row gap-8            /*  mobile row */
+              lg:flex-col lg:space-y-20      /*  desktop column */
+              pl-0 lg:pl-6
+              py-4 lg:py-10
+              overflow-x-auto lg:overflow-y-auto
+              scroll-smooth
+              xl:h-80
+              xl:bg-[url('../assets/images/horizontal-line.webp')]
+              xl:bg-no-repeat
+              xl:bg-position-[left_23px_top_0px]
+            "
+          >
 
                 {years.map((year, index) => (
                     <li
@@ -101,7 +101,8 @@ const Image2018 = [ Image2020_1, Image2018_3, Image2018_4, Image2018_5, Image201
 
             <!-- RIGHT SWIPER -->
             <div class="col-span-12 lg:col-span-10">
-               <div class="swiper mySwiper h-[700px] lg:h-[700px] overflow-hidden">
+              <div class="swiper mySwiper h-screen xl:h-[800px] 2xl:h-[700px] overflow-hidden">
+
 
                 <div class="swiper-wrapper">
                     <!-- ? 2024 -->
@@ -109,7 +110,7 @@ const Image2018 = [ Image2020_1, Image2018_3, Image2018_4, Image2018_5, Image201
                         <div class="flex flex-wrap gap-2.5 ">
                             {
                                 Image2024.map((image, index) => (
-                                    <div class="flex grow justify-center items-center h-[225px] xl:h-[200px]" >
+                                    <div class="flex grow justify-center items-center h-[225px] xl:h-40 2xl:h-[200px]" >
                                         <img src={image.src} alt={`Image ${index}`} class="object-cover w-full h-full" />
                                     </div>
                                 ))
@@ -129,7 +130,7 @@ const Image2018 = [ Image2020_1, Image2018_3, Image2018_4, Image2018_5, Image201
                         <div class="flex flex-wrap gap-2.5 ">
                             {
                                 Image2023.map((image, index) => (
-                                    <div class="flex grow justify-center items-center h-[225px] xl:h-[200px]" >
+                                    <div class="flex grow justify-center items-center h-[225px] xl:h-40 2xl:h-[200px]" >
                                         <img src={image.src} alt={`Image ${index}`} class="object-cover w-full h-full" />
                                     </div>
                                 ))
@@ -149,7 +150,7 @@ const Image2018 = [ Image2020_1, Image2018_3, Image2018_4, Image2018_5, Image201
                         <div class="flex flex-wrap gap-2.5 ">
                             {
                                 Image2022.map((image, index) => (
-                                    <div class="flex grow justify-center items-center h-[225px] xl:h-[200px]" >
+                                    <div class="flex grow justify-center items-center h-[225px] xl:h-40 2xl:h-[200px]" >
                                         <img src={image.src} alt={`Image ${index}`} class="object-cover w-full h-full" />
                                     </div>
                                 ))
@@ -169,7 +170,7 @@ const Image2018 = [ Image2020_1, Image2018_3, Image2018_4, Image2018_5, Image201
                         <div class="flex flex-wrap gap-2.5 ">
                             {
                                 Image2021.map((image, index) => (
-                                    <div class="flex grow justify-center items-center h-[225px] xl:h-[200px]" >
+                                    <div class="flex grow justify-center items-center h-[225px] xl:h-40 2xl:h-[200px]" >
                                         <img src={image.src} alt={`Image ${index}`} class="object-cover w-full h-full" />
                                     </div>
                                 ))
@@ -189,7 +190,7 @@ const Image2018 = [ Image2020_1, Image2018_3, Image2018_4, Image2018_5, Image201
                         <div class="flex flex-wrap gap-2.5 ">
                             {
                                 Image2020.map((image, index) => (
-                                    <div class="flex grow justify-center items-center h-[225px] xl:h-[200px]" >
+                                    <div class="flex grow justify-center items-center h-[225px] xl:h-40 2xl:h-[200px]" >
                                         <img src={image.src} alt={`Image ${index}`} class="object-cover w-full h-full" />
                                     </div>
                                 ))
@@ -209,7 +210,7 @@ const Image2018 = [ Image2020_1, Image2018_3, Image2018_4, Image2018_5, Image201
                         <div class="flex flex-wrap gap-2.5 ">
                             {
                                 Image2019.map((image, index) => (
-                                    <div class="flex grow justify-center items-center h-[225px] xl:h-[200px]" >
+                                    <div class="flex grow justify-center items-center h-[225px] xl:h-40 2xl:h-[200px]" >
                                         <img src={image.src} alt={`Image ${index}`} class="object-cover w-full h-full" />
                                     </div>
                                 ))
@@ -229,7 +230,7 @@ const Image2018 = [ Image2020_1, Image2018_3, Image2018_4, Image2018_5, Image201
                         <div class="flex flex-wrap gap-2.5 ">
                             {
                                 Image2018.map((image, index) => (
-                                    <div class="flex grow justify-center items-center h-[225px] xl:h-[200px]" >
+                                    <div class="flex grow justify-center items-center h-[225px] xl:h-40 2xl:h-[200px]" >
                                         <img src={image.src} alt={`Image ${index}`} class="object-cover w-full h-full" />
                                     </div>
                                 ))
@@ -254,7 +255,7 @@ const Image2018 = [ Image2020_1, Image2018_3, Image2018_4, Image2018_5, Image201
 
 <style>
 /* ===============================
-   YEAR TABS (MOBILE FIRST)
+    YEAR TABS (MOBILE FIRST)
 ================================ */
 
 .year-item {
@@ -263,7 +264,7 @@ const Image2018 = [ Image2020_1, Image2018_3, Image2018_4, Image2018_5, Image201
   display: flex;
   align-items: center;
   font-weight: 600;
-  font-size: 16px;            /* ✅ mobile */
+  font-size: 16px;       
   color: #9ca3af;
   white-space: nowrap;
   cursor: pointer;
@@ -277,9 +278,9 @@ const Image2018 = [ Image2020_1, Image2018_3, Image2018_4, Image2018_5, Image201
 }
 
 /* ===============================
-   DESKTOP (VERTICAL TIMELINE)
+    DESKTOP (VERTICAL TIMELINE)
 ================================ */
-@media (min-width: 1024px) {
+@media (min-width: 1280px) {
   .year-item {
     font-size: 20px;
     padding-left: 24px;
@@ -320,7 +321,7 @@ const Image2018 = [ Image2020_1, Image2018_3, Image2018_4, Image2018_5, Image201
 .swiper-slide {
   display: flex;
   flex-direction: column;
-  align-items: stretch;      /* ✅ important */
+  align-items: stretch;      /*  important */
   justify-content: flex-start;
   color: white;
   border-radius: 16px;
@@ -349,70 +350,81 @@ const Image2018 = [ Image2020_1, Image2018_3, Image2018_4, Image2018_5, Image201
 <script is:inline>
   const yearItems = document.querySelectorAll(".year-item");
   const yearTabs = document.getElementById("yearTabs");
-
+    let isYearClick = false;
 const swiper = new Swiper(".mySwiper", {
   slidesPerView: 1,
   spaceBetween: 30,
-  direction: "vertical",
 
-  mousewheel: {
-    forceToAxis: true,
-    sensitivity: 1,
-    releaseOnEdges: false,
-  },
+  direction: window.innerWidth >= 1280 ? "vertical" : "horizontal",
 
-  breakpoints: {
-    0: {
-      direction: "horizontal",
-      mousewheel: false,
-      autoHeight: true,
-    },
-    1024: {
-      direction: "vertical",
-      mousewheel: true,
-      autoHeight: false,
-      
-    },
-  },
+  mousewheel: window.innerWidth >= 1280
+    ? {
+        enabled: true,
+        sensitivity: 0.6,
+        releaseOnEdges: true,  
+        thresholdDelta: 20,
+
+      }
+    : false,
+
+  autoHeight: window.innerWidth < 1280,
 
   on: {
     slideChange(swiper) {
       setActiveYear(swiper.activeIndex);
+      isYearClick = false; 
     },
   },
 });
 
+const swiperEl = document.querySelector(".mySwiper");
+
+swiperEl.addEventListener(
+  "wheel",
+  (e) => {
+    if (window.innerWidth >= 1280) {
+      e.preventDefault();
+    }
+  },
+  { passive: false }
+);
+
+
 
 
   function setActiveYear(index) {
-    yearItems.forEach(item => item.classList.remove("active"));
+  yearItems.forEach(item => item.classList.remove("active"));
 
-    const activeItem = yearItems[index];
-    activeItem.classList.add("active");
+  const activeItem = yearItems[index];
+  activeItem.classList.add("active");
 
-    // Only auto-scroll UL on desktop
-    if (window.innerWidth >= 1024) {
-      const ulHeight = yearTabs.clientHeight;
-      const liHeight = activeItem.offsetHeight;
+  // Desktop → always auto-scroll
+  if (window.innerWidth >= 1280) {
+    const ulHeight = yearTabs.clientHeight;
+    const liHeight = activeItem.offsetHeight;
 
-      const scrollTop =
-        activeItem.offsetTop -
-        ulHeight / 2 +
-        liHeight / 2;
+    const scrollTop =
+      activeItem.offsetTop -
+      ulHeight / 2 +
+      liHeight / 2;
 
-      yearTabs.scrollTo({
-        top: scrollTop,
-        behavior: "smooth",
-      });
-    } else {
-      // Mobile → scroll horizontally
-      activeItem.scrollIntoView({
-        behavior: "smooth",
-        inline: "center",
-        block: "nearest",
-      });
-    }
+    yearTabs.scrollTo({
+      top: scrollTop,
+      behavior: "smooth",
+    });
   }
+
+  //  Mobile → ONLY scroll when clicked, NOT on swipe
+  else if (isYearClick) {
+    activeItem.scrollIntoView({
+      behavior: "smooth",
+      inline: "center",
+      block: "nearest",
+    });
+  }
+}
+
+
 
   // Initial state
   setActiveYear(0);
@@ -420,6 +432,7 @@ const swiper = new Swiper(".mySwiper", {
   // Click → Slide
   yearItems.forEach(item => {
     item.addEventListener("click", () => {
+      isYearClick = true; 
       swiper.slideTo(Number(item.dataset.index));
     });
   });
