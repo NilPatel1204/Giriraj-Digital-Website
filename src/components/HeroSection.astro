@@ -14,15 +14,18 @@ import LinkButton from "./LinkButton.astro";
 
 // conditions
 const hasHeroImage = !!HeroImage;
+const hasBgImage = !!BgImage;
+
 
 // background positioning based on HeroImage
-const bgPosition = hasHeroImage ? "bg-[position:calc(100%-10px)_calc(100%-20px)] lg:bg-[position:bottom_0px_right_40px] xl:bg-[position:bottom_0px_right_165px]" : "bg-[position:center_right_80px]";
+const bgPosition = hasHeroImage ? " bg-[position:calc(100%-10px)_calc(100%-20px)] lg:bg-[position:bottom_0px_right_40px] xl:bg-[position:bottom_0px_right_165px]" : "bg-[position:center_right_80px]";
 
 // column size for content
-const contentCols = hasHeroImage ? "lg:col-span-6" : "lg:col-span-7";
+const contentCols = hasHeroImage ? "lg:col-span-6 py-10 md:py-20 lg:py-24 xl:py-[120px]" : "lg:col-span-7";
 ---
 
-<section class={`section-container mt-[90px]! grid grid-cols-12 gap-[30px] py-10 md:py-20 lg:py-24 xl:py-[120px] bg-no-repeat bg-[length:120px] lg:bg-[length:auto] ${bgPosition}`} style={`background-image: url('${BgImage.src}');`}>
+<section class={`section-container mt-[90px]! grid grid-cols-12 gap-[30px]   ${hasBgImage ? `bg-no-repeat bg-[length:120px] lg:bg-[length:auto] ${bgPosition}` : ""} `} {...(hasBgImage && {   style: `background-image: url('${BgImage.src}');` })}
+>
     <div class={`lg:col-start-2 col-span-12 ${contentCols} space-y-5 lg:space-y-8`}>
         <div class="space-y-4">
             {
@@ -56,7 +59,7 @@ const contentCols = hasHeroImage ? "lg:col-span-6" : "lg:col-span-7";
     {HeroImage && (
         <img
         src={HeroImage.src}
-        class="col-span-12 lg:col-span-4 justify-self-center lg:justify-self-end"
+        class="col-span-12 lg:col-span-4 justify-self-center lg:justify-self-end self-center"
         alt={Title}
         />
     )}
