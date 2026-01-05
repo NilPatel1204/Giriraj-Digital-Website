@@ -1,0 +1,179 @@
+---
+import Layout from "../layouts/Layout.astro";
+import HeroSection from "../components/HeroSection.astro";
+import LeftSideCard from "../components/LeftSideCard.astro";
+import SwipeUpCard from "../components/SwipeUpCard.astro";
+import SectionTitle from "../components/SectionTitle.astro";
+import TextCard from "../components/TextCard.astro";
+import AchievementsCard from "../components/AchievementsCard.astro";
+import RightSideCard from "../components/RightSideCard.astro";
+import PurposeDrivenApproach from "../components/PurposeDrivenApproach.astro";
+import FaqContainer from "../components/FaqContainer.astro";
+import ContactUsForm from "../components/ContactUsForm.astro";
+import KeyHighlights from "../components/KeyHighlights.astro";
+
+import HeroBg from "../assets/images/about-hero-bg-image.webp"
+import RightImage from "../assets/images/giriraj-digital-right-image.webp"
+import FuelOfSuccess from "../components/FuelOfSuccess.astro";
+import Card1BgImage1 from "../assets/images/bg-card-1.webp"
+import Card1BgImage2 from "../assets/images/bg-card-2.webp"
+import Card1BgImage3 from "../assets/images/bg-card-3.webp"
+import ImageIcon1 from "../assets/images/excellence.png";
+import ImageIcon2 from "../assets/images/integrity.png";
+import ImageIcon3 from "../assets/images/collaboration.png";
+import ImageIcon4 from "../assets/images/innovation.png";
+import ImageIcon5 from "../assets/images/social-responsibility.png";
+import ImageIcon6 from "../assets/images/professional-team.png";
+import ImageIcon7 from "../assets/images/embracing-innovation.png";
+import ImageIcon8 from "../assets/images/client-centric-approach.png";
+import ImageIcon9 from "../assets/images/comprehensive-service.png";
+import ImageIcon10 from "../assets/images/transparant-communication.png";
+import ImageIcon11 from "../assets/images/continuous-support.png";
+import UmbracoMVPCertification from "../assets/images/umbraco-mvp-certification.png"
+import GoldUmbracoCertification from "../assets/images/gold-umbraco-certificate.png"
+import MicrosoftCertification from "../assets/images/microsoft-certification.png"
+import GoogleCertification from "../assets/images/google.png"
+import RightContentBg from "../assets/images/natural-sustains.webp"
+import ContactBg from "../assets/images/contact-bg.webp"
+
+
+const ParagraphContent = [
+    "Established in 2018, Giriraj Digital was founded by two visionaries passionate about innovation and excellence. Since then, our Digital transformation solutions company has evolved into a dynamic team of 55+ professionals, united in our mission to deliver quality solutions at competitive rates and with quick turnaround times.",
+    "Our comprehensive service portfolio covers product development, engineering, E-Commerce application development, web app development, mobile app development, dedicated development centers, and quality assurance. With a dedication to customer satisfaction and a pursuit of excellence, Giriraj Digital continues to lead the way in enterprise solutions."
+]
+
+
+const cards = [
+    {
+        bgImage: Card1BgImage1,
+        heading: "Mission",
+        paragraph:
+        "Giriraj Digital - the leading digital transformation company was started and is working with a mission to serve enterprises worldwide with comprehensive solutions that drive business growth and success.",
+        padding:true
+    },
+    {
+        bgImage: Card1BgImage2,
+        heading: "Vision",
+        paragraph:
+        `Our vision at Giriraj Digital is simple yet profound: "Happy Customers, Happy Us." We believe that the key to our success lies in the success of our clients. Therefore, we are dedicated to delivering digital solutions and services that not only meet but exceed our clients' expectations.`,
+        padding:true
+    },
+    {
+        bgImage: Card1BgImage3,
+        heading: "Approach",
+        paragraph:
+        "Giriraj Digital is working with a proven & tested approach to deliver the best-in-class solutions to businesses from different industries. Our digital transformation company thoroughly understands your needs and goals and leverages the latest tools, tech.",
+        padding:true
+    }
+]
+
+const Certifications = [
+    UmbracoMVPCertification, GoldUmbracoCertification,  MicrosoftCertification,GoogleCertification
+]
+
+const faqList = [
+    {
+        Question: "What services does Giriraj Digital provide?",
+        Answer: "Giriraj Digital offers a comprehensive suite of IT solutions to cater to diverse business needs. Our services include product engineering, e-commerce application development, web application development, dedicated development centers, quality assurance, consultation, implementation, migration, deployment, and ongoing support."
+    },
+    {
+        Question: "What industries does Giriraj Digital serve?",
+        Answer: "Giriraj Digital - the digital solutions company serves a wide range of industries spanning retail, e-commerce, healthcare, finance, manufacturing, education, and more. Our solutions are tailored to address the unique challenges and requirements of each industry, ensuring maximum impact and value for our clients."
+    },
+    {
+        Question: "What sets Giriraj Digital apart from other IT solution providers?",
+        Answer: "Our digital software solutions company distinguishes itself through its unwavering commitment to excellence, transparency, and client satisfaction. We prioritize collaboration and communication, working closely with our clients to understand their needs and deliver solutions that exceed expectations. Our dedication to innovation and continuous improvement sets us apart as a trusted partner for digital transformation."
+    },
+    {
+        Question: "Is Giriraj Digital certified or partnered with any technology platforms?",
+        Answer: "Yes, Giriraj Digital is proud to be an official Umbraco Gold partner along with other important awards and certifications in our bag, showcasing our expertise and proficiency in diverse tools & technologies. This partnership reflects our commitment to delivering high-quality digital software solutions and staying at the forefront of technology advancements."
+    },
+    {
+        Question: "How does Giriraj Digital ensure the quality of its solutions?",
+        Answer: "Quality is at the core of everything we do at Giriraj Digital. We adhere to rigorous quality assurance processes, including comprehensive testing and validation, to ensure the reliability, performance, and security of our solutions. Our team of skilled professionals meticulously reviews each project to identify and address any issues before deployment, ensuring a seamless and error-free experience for our clients."
+    },
+    {
+        Question: "Does Giriraj Digital provide post-project support and maintenance?",
+        Answer: "Yes, our digital transformation solutions company offers comprehensive post-project support and maintenance services to ensure the long-term success and sustainability of our solutions. Our dedicated support team is available to address any technical issues, provide assistance with updates or enhancements, and ensure that your solution remains optimized and up-to-date."
+    },
+    {
+        Question: "Can Giriraj Digital accommodate projects of all sizes?",
+        Answer: "Absolutely! Giriraj Digital works with clients of all sizes, from startups to established enterprises. Whether you have a small-scale project or a large-scale enterprise IT solution, we have the expertise and resources to deliver results that meet your unique needs and objectives."
+    },
+    {
+        Question: "What is Giriraj Digital's approach to pricing and billing?",
+        Answer: "Giriraj Digital offers diverse and flexible pricing options to accommodate the unique needs and budget constraints of our clients. We provide transparent and competitive pricing based on factors such as project scope, complexity, and duration with no hidden costs involved."
+    },
+];
+
+---
+
+<Layout Title="About | GIRIRAJ DIGITAL">
+    <!-- * Hero Section -->
+    <HeroSection BgImage={HeroBg}, SubTitle="General Overview Page" , Title="Giriraj Digital: Your Leading Digital Transformation Company!" Paragraph="Giriraj Digital stands at the forefront of IT enterprise solutions, delivering excellence through innovation & crafting tailored digital solutions that drive business success" />
+
+    <!-- * More About GIRIRAJ DIGITAL As Your Consulting Partner! -->
+    <LeftSideCard RightImage={RightImage} SubTitle="OVERVIEW" Title="Delivering Transformative IT Solutions for Businesses!" Paragraph={ParagraphContent} />
+
+    <!-- * Fuel Of Success -->
+    <FuelOfSuccess />
+
+    <!-- * Unlocking Excellence -->
+    <KeyHighlights />
+
+    <!-- * SwipeUp Card -->
+    <SwipeUpCard CardsData={cards} Heading="Foundations of Excellence:Our Mission, Vision, and Approach!" />
+
+    <!-- * Our Process Blueprint  -->
+    <section class="section-container grid grid-cols-12 gap-5 lg:gap-[30px] space-y-[30px] lg:space-y-[60px]">
+        <div class="col-span-12 lg:col-start-2 lg:col-span-8">
+            <SectionTitle Title="Our Process Blueprint" Heading="Process we Follow to archive best result" />
+        </div>
+
+        <div class="col-span-12 lg:col-start-2 lg:col-span-10  grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-[30px] lg:gap-10">
+            <TextCard Icon={ImageIcon1} Title="Excellence", Paragraph={["We strive for excellence in everything we do, setting high standards and continuously looking for ways to improve and innovate."]} />
+            <TextCard Icon={ImageIcon2} Title="Integrity", Paragraph={["We as a digital solutions company conduct operations with honesty, transparency, and integrity at the core, earning the trust of our clients, partners, and colleagues at Giriraj Digital."]} />
+            <TextCard Icon={ImageIcon3} Title="Collaboration", Paragraph={["We believe in the power of effective communication, collaboration, and teamwork, fostering a culture of support, respect, and appreciation to offer the best results for our clients and a culture."]} />
+
+            <TextCard Icon={ImageIcon3} Title="Customer-Centricity", Paragraph={["Our customers are at the heart of everything we do. We are committed to understanding their needs, exceeding their expectations, and delivering exceptional value."]} />
+            <TextCard Icon={ImageIcon4} Title="Innovation", Paragraph={["We embrace creativity and innovation, staying ahead of the curve by leveraging cutting-edge technologies, solutions, and practices to fulfill our client's diverse objectives."]} />
+            <TextCard Icon={ImageIcon5} Title="Social Responsibility", Paragraph={["We are committed to making a positive impact on society and the environment, contributing to sustainable development, and giving back to the communities we serve."]} />
+        </div>
+    </section>
+
+    <!-- * Digital Journey -->
+    <AchievementsCard Title="Achievements" Heading="Our Certificates and Accolades"  Certificates={Certifications} GridClass="grid-cols-2" GapClass="gap-5 lg:gap-[60px]" />
+
+    <!-- * RightSideCard -->
+    <RightSideCard BgImage={RightContentBg} Heading="Nurturing Sustainable Impact while Embracing Purpose-led Strategies!", Paragraph="At the core of our digital transformation solutions company, lies a deep commitment to driving sustainable change through purpose-led strategies. We recognize that true success is not just about achieving targets, but about integrating our purpose into every facet of our operations." />
+
+    <!-- * Empower Your Digital Journey with Us! -->
+    <section class="section-container grid grid-cols-12 gap-5 lg:gap-[30px] space-y-[30px] lg:space-y-[60px]">
+        <div class="col-span-12 lg:col-start-2 lg:col-span-8">
+            <SectionTitle Title="Empower Your Digital Journey with Us!" Heading="Why Choose Digital Solutions Company?" />
+        </div>
+
+        <div class="col-span-12 lg:col-start-2 lg:col-span-10  grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-[30px] lg:gap-10">
+            <TextCard Icon={ImageIcon6} Title="Experienced and Professional Team", Paragraph={["At Giriraj Digital, our team comprises experienced and skilled professionals who are passionate about everything tech & delivering excellence to our customers. With a diverse range of expertise across various domains, our team stays updated and collaborates seamlessly to bring your vision to life."]} />
+
+            <TextCard Icon={ImageIcon7} Title="Embracing Innovation", Paragraph={["Innovation is at the heart of what we do at Giriraj Digital. By embracing emerging tools & technologies, we stay ahead of the curve and deliver digital software solutions that are future-proof and scalable. Our proactive approach to innovation enables us to anticipate market trends."]} />
+
+            <TextCard Icon={ImageIcon8} Title="Client-Centric Approach", Paragraph={["At Giriraj Digital, we prioritizes the needs and objectives of our clients above all else. We take the time to listen to your requirements, understand your challenges, and tailor our solutions accordingly. Our collaborative approach ensures that your vision is translated into a tangible solution that exceeds your expectations."]} />
+
+            <TextCard Icon={ImageIcon9} Title="Comprehensive Service Offering", Paragraph={["From initial consultation to implementation, testing, deployment, and support, we offer end-to-end digital solutions and services to meet all your digital needs. Whether you require custom software development, web application development, or cloud migration services,"]} />
+
+            <TextCard Icon={ImageIcon10} Title="Transparent Communication", Paragraph={["At Giriraj Digital, we believe in transparent communication every step of the way. From project kickoff to delivery, we keep you informed about the progress, challenges, and milestones. Our open and honest approach ensures that you have full visibility into the project's status."]} />
+
+            <TextCard Icon={ImageIcon11} Title="Continuous Support and Maintenance", Paragraph={["Our commitment to your success doesn't end with project delivery. We offer continuous support and maintenance services to ensure that your IT solution remains optimized and up-to-date. Whether you encounter technical issues, require additional features, or need assistance with scaling your solution,"]} />
+        </div>
+    </section>
+
+    <!-- * Our purpose-driven approach enables our Digital transformation company to -->
+    <PurposeDrivenApproach />
+
+    <!-- * FAQs -->
+    <FaqContainer FaqList={faqList}  />
+
+    <!-- * Contact Now -->
+    <ContactUsForm ContactUsBgImage={ContactBg} />
+</Layout>

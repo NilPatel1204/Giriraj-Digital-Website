@@ -1,0 +1,440 @@
+---
+import SectionTitle from "./SectionTitle.astro";
+
+const years = ["2024", "2023", "2022", "2021", "2020", "2019", "2018"];
+
+import Image2020_1 from "../assets/images/gd-2018-1.png";
+import Image2020_2 from "../assets/images/gd-2020-2.png";
+import Image2020_3 from "../assets/images/gd-2020-3.png";
+import Image2020_4 from "../assets/images/gd-2020-4.png";
+import Image2020_5 from "../assets/images/gd-2020-1.png";
+import Image2020_6 from "../assets/images/gd-2020-5.png";
+import Image2020_7 from "../assets/images/gd-2020-6.png";
+
+import Image2024_1 from "../assets/images/nikhil-prajapati-umbraco-mvp.webp";
+import Image2024_2 from "../assets/images/codegarden-talk-nikhil.webp";
+import Image2024_3 from "../assets/images/umbraco-codegarden.webp";
+import Image2024_4 from "../assets/images/gd-on-stage.webp";
+import Image2024_5 from "../assets/images/mvp-award-nikhil.webp";
+import Image2024_6 from "../assets/images/giriraj-digital-at-codegarden.webp";
+import Image2024_7 from "../assets/images/umbraco-mvp-nikhil-prajapati.webp";
+
+import Image2023_1 from "../assets/images/rectangle-1186-1.webp";
+import Image2023_2 from "../assets/images/rectangle-1187-1.webp";
+import Image2023_3 from "../assets/images/rectangle-1185-1.webp";
+import Image2023_4 from "../assets/images/rectangle-1189-1.webp";
+import Image2023_5 from "../assets/images/rectangle-1190-1.webp";
+import Image2023_6 from "../assets/images/rectangle-1191-1.webp";
+
+
+import Image2022_2 from "../assets/images/gd-2022-1.webp";
+import Image2022_3 from "../assets/images/gd-2022-2.webp";
+import Image2022_4 from "../assets/images/gd-2022-3.webp";
+import Image2022_5 from "../assets/images/gd-2022-4.webp";
+import Image2022_6 from "../assets/images/gd-2022-5.webp";
+import Image2022_7 from "../assets/images/gd-2022-6.webp";
+
+import Image2021_2 from "../assets/images/gd-2021-1.webp";
+import Image2021_3 from "../assets/images/gd-2021-2.webp";
+import Image2021_4 from "../assets/images/gd-2021-3.webp";
+import Image2021_5 from "../assets/images/gd-2021-4.webp";
+import Image2021_6 from "../assets/images/gd-2021-5.webp";
+import Image2021_7 from "../assets/images/gd-2021-6.webp";
+
+import Image2019_2 from "../assets/images/gd-2019-1.webp";
+import Image2019_3 from "../assets/images/gd-2019-2.webp";
+import Image2019_4 from "../assets/images/gd-2019-3.webp";
+import Image2019_5 from "../assets/images/gd-2019-4.webp";
+import Image2019_6 from "../assets/images/gd-2019-5.webp";
+import Image2019_7 from "../assets/images/gd-2019-6.webp";
+
+import Image2018_2 from "../assets/images/gd-2018.webp";
+import Image2018_3 from "../assets/images/gd-2018-2.webp";
+import Image2018_4 from "../assets/images/gd-2018-3.webp";
+import Image2018_5 from "../assets/images/gd-2018-4.webp";
+import Image2018_6 from "../assets/images/gd-2018-5.webp";
+import Image2018_7 from "../assets/images/gd-2018-6.webp";
+
+const Image2024 = [ Image2024_1, Image2024_2, Image2024_3, Image2024_4, Image2024_5, Image2024_6, Image2024_7]
+const Image2023 = [ Image2020_1, Image2023_1, Image2023_2, Image2023_3, Image2023_4, Image2023_5, Image2023_6]
+const Image2022 = [ Image2020_1, Image2022_2, Image2022_3, Image2022_4, Image2022_5, Image2022_6, Image2022_7]
+const Image2021 = [ Image2020_1, Image2021_7,  Image2021_2, Image2021_3, Image2021_4, Image2021_5, Image2021_6]
+const Image2020 = [ Image2020_1, Image2020_2, Image2020_3, Image2020_4, Image2020_5, Image2020_6, Image2020_7]
+const Image2019 = [ Image2020_1, Image2019_2, Image2019_3, Image2019_7, Image2019_4, Image2019_5, Image2019_6]
+const Image2018 = [ Image2020_1, Image2018_3, Image2018_4, Image2018_5, Image2018_2, Image2018_7, Image2018_6]
+---
+
+<section class="section-container grid grid-cols-12 gap-5 lg:gap-[30px]">
+    <div class="col-span-12 lg:col-start-2 lg:col-span-10 space-y-[30px] lg:space-y-[60px]">
+        <SectionTitle Title="Unlocking Excellence" Heading="Key Highlights About Us!" />
+
+        <div class="grid grid-cols-12 gap-5 lg:gap-[30px]">
+            <!-- LEFT YEARS -->
+            <div class="col-span-12 lg:col-span-2  content-center items-center">
+            <ul
+            id="yearTabs"
+            class="
+              relative
+              flex flex-row gap-8            /*  mobile row */
+              lg:flex-col lg:space-y-20      /*  desktop column */
+              pl-0 lg:pl-6
+              py-4 lg:py-10
+              overflow-x-auto lg:overflow-y-auto
+              scroll-smooth
+              xl:h-80
+              xl:bg-[url('../assets/images/horizontal-line.webp')]
+              xl:bg-no-repeat
+              xl:bg-position-[left_23px_top_0px]
+            "
+          >
+
+                {years.map((year, index) => (
+                    <li
+                    class="year-item cursor-pointer text-xl font-semibold text-gray-400 transition"
+                    data-index={index}
+                    >
+                    {year}
+                    </li>
+                ))}
+                </ul>
+            </div>
+
+            <!-- RIGHT SWIPER -->
+            <div class="col-span-12 lg:col-span-10">
+              <div class="swiper mySwiper h-screen xl:h-[800px] 2xl:h-[700px] overflow-hidden">
+
+
+                <div class="swiper-wrapper">
+                    <!-- ? 2024 -->
+                    <div class="swiper-slide space-y-[30px] flex-col">
+                        <div class="flex flex-wrap gap-2.5 ">
+                            {
+                                Image2024.map((image, index) => (
+                                    <div class="flex grow justify-center items-center h-[225px] xl:h-40 2xl:h-[200px]" >
+                                        <img src={image.src} alt={`Image ${index}`} class="object-cover w-full h-full" />
+                                    </div>
+                                ))
+                            }
+                        </div>
+                        <div class="space-y-4 block">
+                            <h3 class="text-[#212529] text-3xl lg:text-5xl">2024</h3>
+                            <div class="space-y-1">
+                                <h5 class="text-[#0FA1DB] font-bold text-xl lg:text-[26px]">Umbraco MVP, Talk on Codegarden stage</h5>
+                                <p class="text-[#212529] font-medium text-xl">Our CTO - Nikhil Prajapati has been selected as an Umbraco MVP and given a talk on the Codegarden stage about AI Automation with Umbraco cloud.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- ? 2023 -->
+                    <div class="swiper-slide space-y-[30px] flex-col">
+                        <div class="flex flex-wrap gap-2.5 ">
+                            {
+                                Image2023.map((image, index) => (
+                                    <div class="flex grow justify-center items-center h-[225px] xl:h-40 2xl:h-[200px]" >
+                                        <img src={image.src} alt={`Image ${index}`} class="object-cover w-full h-full" />
+                                    </div>
+                                ))
+                            }
+                        </div>
+                        <div class="space-y-4 block">
+                            <h3 class="text-[#212529] text-3xl lg:text-5xl">2023</h3>
+                            <div class="space-y-1">
+                                <h5 class="text-[#0FA1DB] font-bold text-xl lg:text-[26px]">New Office in Denmark, Gitex Global Presence</h5>
+                                <p class="text-[#212529] font-medium text-xl">We're thrilled to announce the opening of our new office in Denmark, marking a significant milestone in our global expansion journey. In addition, we're excited to share our participation at Gitex, a premier tech event that showcases our commitment to innovation and excellence on a global scale.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- ? 2022 -->
+                    <div class="swiper-slide space-y-[30px] flex-col items-start!">
+                        <div class="flex flex-wrap gap-2.5 ">
+                            {
+                                Image2022.map((image, index) => (
+                                    <div class="flex grow justify-center items-center h-[225px] xl:h-40 2xl:h-[200px]" >
+                                        <img src={image.src} alt={`Image ${index}`} class="object-cover w-full h-full" />
+                                    </div>
+                                ))
+                            }
+                        </div>
+                        <div class="space-y-4 block">
+                            <h3 class="text-[#212529] text-3xl lg:text-5xl">2022</h3>
+                            <div class="space-y-1">
+                                <h5 class="text-[#0FA1DB] font-bold text-xl lg:text-[26px]">Codegarden, Sugcon Global Presence</h5>
+                                <p class="text-[#212529] font-medium text-xl">We're excited to announce our participation in Codegarden and SUGCON, two premier events in the Umbraco and Sitecore ecosystems.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- ? 2021 -->
+                    <div class="swiper-slide space-y-[30px] flex-col items-start!">
+                        <div class="flex flex-wrap gap-2.5 ">
+                            {
+                                Image2021.map((image, index) => (
+                                    <div class="flex grow justify-center items-center h-[225px] xl:h-40 2xl:h-[200px]" >
+                                        <img src={image.src} alt={`Image ${index}`} class="object-cover w-full h-full" />
+                                    </div>
+                                ))
+                            }
+                        </div>
+                        <div class="space-y-4 block">
+                            <h3 class="text-[#212529] text-3xl lg:text-5xl">2021</h3>
+                            <div class="space-y-1">
+                                <h5 class="text-[#0FA1DB] font-bold text-xl lg:text-[26px]">Become Umbraco Gold Partner</h5>
+                                <p class="text-[#212529] font-medium text-xl">We're proud to announce that we've achieved Umbraco Gold Partnership status, a testament to our commitment to excellence in web development.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- ? 2020 -->
+                    <div class="swiper-slide space-y-[30px] flex-col items-start!">
+                        <div class="flex flex-wrap gap-2.5 ">
+                            {
+                                Image2020.map((image, index) => (
+                                    <div class="flex grow justify-center items-center h-[225px] xl:h-40 2xl:h-[200px]" >
+                                        <img src={image.src} alt={`Image ${index}`} class="object-cover w-full h-full" />
+                                    </div>
+                                ))
+                            }
+                        </div>
+                        <div class="space-y-4 block text-left items-center">
+                            <h3 class="text-[#212529] text-3xl lg:text-5xl">2020</h3>
+                            <div class="space-y-1">
+                                <h5 class="text-[#0FA1DB] font-bold text-xl lg:text-[26px]">Umbraco MVP, Talk on Codegarden stage</h5>
+                                <p class="text-[#212529] font-medium text-xl">Our CTO - Nikhil Prajapati has been selected as an Umbraco MVP and given a talk on the Codegarden stage about AI Automation with Umbraco cloud.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- ? 2019 -->
+                    <div class="swiper-slide space-y-[30px] flex-col items-start!">
+                        <div class="flex flex-wrap gap-2.5 ">
+                            {
+                                Image2019.map((image, index) => (
+                                    <div class="flex grow justify-center items-center h-[225px] xl:h-40 2xl:h-[200px]" >
+                                        <img src={image.src} alt={`Image ${index}`} class="object-cover w-full h-full" />
+                                    </div>
+                                ))
+                            }
+                        </div>
+                        <div class="space-y-4 block text-left items-center">
+                            <h3 class="text-[#212529] text-3xl lg:text-5xl">2019</h3>
+                            <div class="space-y-1">
+                                <h5 class="text-[#0FA1DB] font-bold text-xl lg:text-[26px]">Full stack developers joined us</h5>
+                                <p class="text-[#212529] font-medium text-xl">Front end (VueJS, ReactJS & Angular) and Backend (.NET, Laravel).</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- ? 2018 -->
+                    <div class="swiper-slide space-y-[30px] flex-col items-start!">
+                        <div class="flex flex-wrap gap-2.5 ">
+                            {
+                                Image2018.map((image, index) => (
+                                    <div class="flex grow justify-center items-center h-[225px] xl:h-40 2xl:h-[200px]" >
+                                        <img src={image.src} alt={`Image ${index}`} class="object-cover w-full h-full" />
+                                    </div>
+                                ))
+                            }
+                        </div>
+                        <div class="space-y-4 block text-left items-center">
+                            <h3 class="text-[#212529] text-3xl lg:text-5xl">2018</h3>
+                            <div class="space-y-1">
+                                <h5 class="text-[#0FA1DB] font-bold text-xl lg:text-[26px]">Set up the Development Centre at Ahmedabad</h5>
+                                <p class="text-[#212529] font-medium text-xl">An individual founder with expertise in Microsoft technology, driving innovation and excellence.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+
+<style>
+/* ===============================
+    YEAR TABS (MOBILE FIRST)
+================================ */
+
+.year-item {
+  position: relative;
+  min-height: 42px;
+  display: flex;
+  align-items: center;
+  font-weight: 600;
+  font-size: 16px;       
+  color: #9ca3af;
+  white-space: nowrap;
+  cursor: pointer;
+  transition: font-size 0.3s ease, color 0.3s ease;
+}
+
+/* Active (mobile) */
+.year-item.active {
+  font-size: 20px;
+  color: #0FA1DB;
+}
+
+/* ===============================
+    DESKTOP (VERTICAL TIMELINE)
+================================ */
+@media (min-width: 1280px) {
+  .year-item {
+    font-size: 20px;
+    padding-left: 24px;
+  }
+
+  /* Small dot */
+  .year-item::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 8px;
+    height: 8px;
+    background: #2C363A;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+  }
+
+  /* Active year (desktop) */
+  .year-item.active {
+    font-size: 35px;
+    color: #0FA1DB;
+  }
+
+  /* Active dot */
+  .year-item.active::before {
+    width: 14px;
+    height: 14px;
+    background: #0FA1DB;
+  }
+}
+
+/* ===============================
+   SWIPER FIX (DESKTOP RESTORE)
+================================ */
+
+.swiper-slide {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;      /*  important */
+  justify-content: flex-start;
+  color: white;
+  border-radius: 16px;
+  margin-top: 0 !important;
+}
+
+/* ===============================
+   SCROLLBAR HIDE
+================================ */
+
+#yearTabs {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+#yearTabs::-webkit-scrollbar {
+  display: none;
+}
+
+
+</style>
+
+
+<script is:inline src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
+
+<script is:inline>
+  const yearItems = document.querySelectorAll(".year-item");
+  const yearTabs = document.getElementById("yearTabs");
+    let isYearClick = false;
+const swiper = new Swiper(".mySwiper", {
+  slidesPerView: 1,
+  spaceBetween: 30,
+
+  direction: window.innerWidth >= 1280 ? "vertical" : "horizontal",
+
+  mousewheel: window.innerWidth >= 1280
+    ? {
+        enabled: true,
+        sensitivity: 0.6,
+        releaseOnEdges: true,  
+        thresholdDelta: 20,
+
+      }
+    : false,
+
+  autoHeight: window.innerWidth < 1280,
+
+  on: {
+    slideChange(swiper) {
+      setActiveYear(swiper.activeIndex);
+      isYearClick = false; 
+    },
+  },
+});
+
+const swiperEl = document.querySelector(".mySwiper");
+
+swiperEl.addEventListener(
+  "wheel",
+  (e) => {
+    if (window.innerWidth >= 1280) {
+      e.preventDefault();
+    }
+  },
+  { passive: false }
+);
+
+
+
+
+  function setActiveYear(index) {
+  yearItems.forEach(item => item.classList.remove("active"));
+
+  const activeItem = yearItems[index];
+  activeItem.classList.add("active");
+
+  // Desktop → always auto-scroll
+  if (window.innerWidth >= 1280) {
+    const ulHeight = yearTabs.clientHeight;
+    const liHeight = activeItem.offsetHeight;
+
+    const scrollTop =
+      activeItem.offsetTop -
+      ulHeight / 2 +
+      liHeight / 2;
+
+    yearTabs.scrollTo({
+      top: scrollTop,
+      behavior: "smooth",
+    });
+  }
+
+  //  Mobile → ONLY scroll when clicked, NOT on swipe
+  else if (isYearClick) {
+    activeItem.scrollIntoView({
+      behavior: "smooth",
+      inline: "center",
+      block: "nearest",
+    });
+  }
+}
+
+
+
+  // Initial state
+  setActiveYear(0);
+
+  // Click → Slide
+  yearItems.forEach(item => {
+    item.addEventListener("click", () => {
+      isYearClick = true; 
+      swiper.slideTo(Number(item.dataset.index));
+    });
+  });
+</script>
+
