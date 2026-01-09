@@ -37,6 +37,13 @@ footer h5 {
     margin-top: 60px;
 }
 
+@media (min-width: 768px) {
+    .section-container {
+        padding-left: 40px;
+        padding-right: 40px;
+        margin-top: 60px;
+    }
+}
 
 @media (min-width: 1024px) {
     .section-container {
