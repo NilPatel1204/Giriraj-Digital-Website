@@ -132,36 +132,36 @@ const projects = [
 
 <style>
     /* Base tab item */
-.services-tabs-item {
-  position: relative;
-  transition: all 0.3s ease;
-}
+    .services-tabs-item {
+    position: relative;
+    transition: all 0.3s ease;
+    }
 
-/* Always-visible indicator (small) */
-.services-tabs-item[data-astro-cid-dbisoard]::before {
-  content: "";
-  position: absolute;
-  left: -14px;
-  top: 18px;
-  width: 8px;
-  height: 8px;
-  background: #cbd5e1; /* gray */
-  border-radius: 50%;
-  transition: all 0.3s ease;
-}
+    /* Always-visible indicator (small) */
+    .services-tabs-item[data-astro-cid-dbisoard]::before {
+    content: "";
+    position: absolute;
+    left: -14px;
+    top: 18px;
+    width: 8px;
+    height: 8px;
+    background: #cbd5e1; /* gray */
+    border-radius: 50%;
+    transition: all 0.3s ease;
+    }
 
-/* Active tab */
-.services-tabs-item.active {
-  opacity: 1;
-}
+    /* Active tab */
+    .services-tabs-item.active {
+    opacity: 1;
+    }
 
-/* Active indicator */
-.services-tabs-item.active[data-astro-cid-dbisoard]::before {
-  width: 14px;
-  height: 14px;
-  left: -17px !important;
-  background: #0FA1DB;
-}
+    /* Active indicator */
+    .services-tabs-item.active[data-astro-cid-dbisoard]::before {
+    width: 14px;
+    height: 14px;
+    left: -17px !important;
+    background: #0FA1DB;
+    }
 
 </style>
 

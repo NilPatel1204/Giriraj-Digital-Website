@@ -20,7 +20,7 @@ const {SubTitle="", Title="", Topics=""} = Astro.props
 
         {
             Topics && Topics.map((item: any) => (
-                <div class="col-span-12 lg:col-span-4 lg:border-b lg:border-[#E3E3E3] flex pl-0 lg:pl-0 p-5 lg:p-[30px] space-x-5 lg:space-x-[30px]">
+                <div class="col-span-12 items-center lg:items-start lg:col-span-4 lg:border-b lg:border-[#E3E3E3] flex pl-0 lg:pl-0 p-5 lg:p-[30px] space-x-5 lg:space-x-[30px]">
                     <img src={item.Image.src} alt={item.name} class="h-fit" />
                     <h3 class="text-[#21292C] leading-[120%] font-bold text-2xl lg:text-[28px] capitalize">{item.Topic} <span class="lg:block">{item.Span}</span></h3>
                 </div>
