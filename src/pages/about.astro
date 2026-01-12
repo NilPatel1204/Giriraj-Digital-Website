@@ -35,6 +35,7 @@ import MicrosoftCertification from "../assets/images/microsoft-certification.png
 import GoogleCertification from "../assets/images/google.png"
 import RightContentBg from "../assets/images/natural-sustains.webp"
 import ContactBg from "../assets/images/contact-bg.webp"
+import { Image } from "astro:assets";
 
 
 const ParagraphContent = [
@@ -68,7 +69,26 @@ const cards = [
 ]
 
 const Certifications = [
-    UmbracoMVPCertification, GoldUmbracoCertification,  MicrosoftCertification,GoogleCertification
+    {
+        Image: UmbracoMVPCertification,
+        AltText: "UmbracoMVP",
+        Link: "/",
+    },
+    {
+        Image: GoldUmbracoCertification,
+        AltText: "GoldUmbraco",
+        Link: "/",
+    },
+    {
+        Image: MicrosoftCertification,
+        AltText: "Microsoft",
+        Link: "/",
+    },
+    {
+        Image: GoogleCertification,
+        AltText: "Google",
+        Link: "/",
+    },
 ]
 
 const faqList = [

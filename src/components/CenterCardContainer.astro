@@ -24,7 +24,9 @@ const { BgImage, Cards = [] , SideImage } = Astro.props;
             {Cards.length > 0 && (
             <div class="flex flex-wrap gap-4">
                 {Cards.map((item:any) => (
-                <img src={item.src} class="w-fit" alt="" />
+                <a href={item.Link}>
+                    <img src={item.Image.src} class="w-fit" alt={item.AltText} />
+                </a>
                 ))}
             </div>
             )}

@@ -114,7 +114,31 @@ const ParagraphContent = [
 
 
 const Certifications = [
-    MSCertofication, UmbracoMVPCertification, AWSCertofication, GoogleCertification, GlassdoorCertification
+    {
+        Image: MSCertofication,
+        AltText: "Microsoft",
+        Link: "/",
+    },
+    {
+        Image: UmbracoMVPCertification,
+        AltText: "UmbracoMVP",
+        Link: "/",
+    },
+    {
+        Image: AWSCertofication,
+        AltText: "AWS",
+        Link: "/",
+    },
+    {
+        Image: GoogleCertification,
+        AltText: "Google",
+        Link: "/",
+    },
+    {
+        Image: GlassdoorCertification,
+        AltText: "Glassdoor",
+        Link: "/",
+    }
 ]
 
 
@@ -145,12 +169,29 @@ const faqList = [
     }
 ];
 
+const Certificates = [
+    {
+        Image: GoldContribute,
+        Link: "/",
+        AltText: "GoldContribute",
+    },
+    {
+        Image: UmbracoMVP,
+        Link: "/",
+        AltText: "UmbracoMVP",
+    },
+    {
+        Image: GoldUmbraco,
+        Link: "/",
+        AltText: "GoldUmbraco",
+    },
+]
 ---
 
 <Layout Title="Enterprise Software Development Company | GIRIRAJ DIGITAL">
 
         <Carousel />
-        <CenterCardContainer BgImage={CenterCardBGImage} Cards={[GoldContribute, UmbracoMVP, GoldUmbraco]} SideImage={CenterCardSideImage} />
+        <CenterCardContainer BgImage={CenterCardBGImage} Cards={Certificates} SideImage={CenterCardSideImage} />
 
         <!-- * Solutions Delivered -->
         <SolutionDelivered />

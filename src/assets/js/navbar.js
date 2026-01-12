@@ -265,3 +265,32 @@ window.addEventListener("scroll", () => {
     navbar.classList.remove("shadow-md");
   }
 });
+
+
+// ===============================
+// DESKTOP — CLOSE DROPDOWN ON OUTSIDE CLICK
+// ===============================
+document.addEventListener("mousedown", (e) => {
+  // Desktop only
+  if (window.innerWidth < 1024) return;
+
+  // Any OPEN dropdown
+  const openDropdowns = document.querySelectorAll(
+    "#dropdownNavbar:not(.hidden), #WhatWeDoDropdown:not(.hidden), #ResourcesDropdown:not(.hidden)"
+  );
+
+  if (!openDropdowns.length) return;
+
+  // If click is inside ANY dropdown inner → do nothing
+  for (const dropdown of openDropdowns) {
+    const inner = dropdown.querySelector("[data-dropdown-inner]");
+    if (inner && inner.contains(e.target)) return;
+  }
+
+  // If click is on trigger button → do nothing
+  if (e.target.closest("[data-dropdown-toggle]")) return;
+
+  // Outside click → CLOSE ALL
+  openDropdowns.forEach(d => d.classList.add("hidden"));
+  clearActiveButtons();
+});

@@ -42,7 +42,7 @@ const projects = [
         </div>
 
         <!-- Tabs -->
-        <div class="col-span-10 lg:col-span-3 space-y-6 lg:space-y-8 lg:pb-8">
+        <div class="col-span-10 lg:col-span-4 xl:col-span-3 space-y-6 lg:space-y-8 lg:pb-8">
             {projects.map((project, index) => (
                 <div
                     class={`tabs-item cursor-pointer rounded-lg lg:p-0 ${index === 0 ? "active" : "opacity-70"}`}
@@ -88,7 +88,7 @@ const projects = [
 
         <!-- Image -->
         <a href={projects[0].Link}
-        class="col-span-10 lg:col-span-7 hidden lg:flex bg-[url('../assets/images/tab-bg.webp')] rounded-t-[30px] pt-[30px] px-[30px] lg:pt-[60px] lg:px-[60px] justify-items-center items-center justify-center items-end"
+        class="col-span-10 lg:col-span-6 xl:col-span-7 hidden lg:flex bg-[url('../assets/images/tab-bg.webp')] rounded-t-[30px] pt-5 px-5 xl:pt-[60px] xl:px-[60px] justify-items-center items-center justify-center items-end"
         >
             <img
                 id="tab-image"

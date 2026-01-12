@@ -12,7 +12,7 @@ import PhoneIcon from "../assets/images/Phone-Icon.png";
         <div class="left flex flex-col space-y-2">
             <p class="font-bold lg:text-2xl">{City}</p>
             <div class="flex space-x-3 w-fit content-center items-center">
-                <img src={CountryLogo.src} class="DENMARK"> 
+                <img src={CountryLogo.src} alt={CountryName}> 
                 <span>{CountryName}</span>
             </div>
         </div>
@@ -25,7 +25,7 @@ import PhoneIcon from "../assets/images/Phone-Icon.png";
                 </a>
 
                 <a href=`mailto:${Email}` class="flex space-x-3 font-bold items-center w-fit!">
-                    <img class="w-fit! h-fit!" src={EmailIcon.src} alt="contact">
+                    <img class="w-fit! h-fit!" src={EmailIcon.src} alt="email">
                     <p>{Email}</p>
                 </a>
             </div>
