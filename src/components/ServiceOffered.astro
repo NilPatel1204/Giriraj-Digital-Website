@@ -66,7 +66,7 @@ const projects = [
             <p class="text-[#0FA1DB] font-semibold lg:text-xl">The services we offer!</p>
 
             <div class="flex flex-col space-y-3.5 lg:space-y-0 lg:flex-row">
-                <h2 class="text-[#212529] text-[26px] lg:text-5xl leading-[120%] font-bold">
+                <h2 class="text-[#212529] text-[26px] lg:text-4xl xl:text-5xl leading-[120%] font-bold">
                     Dig down on the range of customized services we offer to AI automation consulting company
                 </h2>
         
@@ -114,13 +114,13 @@ const projects = [
 
         <div class="col-span-10 lg:col-span-7 hidden lg:flex bg-[url('../assets/images/tab-bg.webp')] rounded-t-[30px] pt-[30px] px-[30px] lg:pt-[60px] lg:px-[60px] items-end justify-center">
 
-            <div class="bg-white h-full p-10 rounded-[20px] rounded-b-none outline-8 outline-white space-y-6 w-full">
+            <div class="bg-white h-full p-5 xl:p-10 rounded-[20px] rounded-b-none outline-8 outline-white space-y-6 w-full">
 
                 <!-- PARAGRAPH -->
                 <p id="tab-paragraph" class="text-[#2C363A] lg:text-lg"></p>
 
                 <!-- LIST -->
-                <div id="tab-list" class="space-y-3"></div>
+                <ul id="tab-list" class="space-y-3 text-[#21292C] font-medium leading-7 list-none"></ul>
 
             </div>
         </div>
@@ -204,11 +204,9 @@ function updateRightContent(tab) {
     const list = tab.dataset.list ? JSON.parse(tab.dataset.list) : [];
 
     list.forEach(text => {
-        const row = document.createElement("div");
-        row.className = "flex items-start gap-3";
-        row.innerHTML = `
-        <img src="/li-icon.png" class="shrink-0" />
-        <p class="text-[#2C363A] lg:text-lg leading-[150%]">${text}</p>
+        const row = document.createElement("li");
+        row.className = "list-none relative pl-8 before:content-[''] before:absolute before:left-0 before:top-3.5 before:-translate-y-1/2 before:w-6 before:h-6 before:bg-[url('/li-icon.png')] before:bg-no-repeat before:bg-contain lg:text-lg";
+        row.innerHTML = `${text}
     `;
 
 

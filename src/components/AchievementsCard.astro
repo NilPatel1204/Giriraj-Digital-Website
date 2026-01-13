@@ -36,7 +36,7 @@ const wrapperCols = FullWidth ? "col-span-12" : "col-span-12 lg:col-span-10 lg:c
                 {Title || ""}
             </p>
 
-            <h2 class={`text-[26px] lg:text-5xl leading-[120%] font-bold ${HeadingColor}`}>
+            <h2 class={`text-[26px] lg:text-4xl xl:text-5xl leading-[120%] font-bold ${HeadingColor}`}>
                 {Heading || ""}
             </h2>
         </div>
@@ -44,13 +44,13 @@ const wrapperCols = FullWidth ? "col-span-12" : "col-span-12 lg:col-span-10 lg:c
             <!-- Certificates -->
         <div class={`col-span-10 ${ FullWidth ? "2xl:col-span-10" : "2xl:col-span-6" } h-fit ${gridClasses}`} >
             {Certificates.map((item: any) => (
-                <div class="flex justify-center">
-                <img
-                    src={item.src}
-                    alt={item.alt || "certificate"}
-                    class={`w-full h-full object-contain outline-8 ${OutlineColor} rounded-xl lg:rounded-[20px]`}
-                />
-                </div>
+                <a href={item.Link} class="flex justify-center">
+                    <img
+                        src={item.Image.src}
+                        alt={item.AltText || "certificate"}
+                        class={`w-full h-full object-contain outline-8 ${OutlineColor} rounded-xl lg:rounded-[20px]`}
+                    />
+                </a>
             ))}
         </div>
     </div>

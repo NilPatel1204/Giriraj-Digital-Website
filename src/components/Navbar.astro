@@ -191,7 +191,12 @@ id="navbar-main"
     </a>
     <div
       class="inline-flex space-x-3 xl:space-x-5 lg:space-x-3 rtl:space-x-reverse lg:order-2 items-center content-center">
-      <button type="button" class="px-3 py-2.5 lg:px-4 lg:py-3 font-semibold leading-5 bg-brand text-sm lg:text-base border border-transparent rounded-base bg-[#000000] rounded-full cursor-pointer text-white">Inquire Now</button>
+      <!-- <button type="button" class="px-3 py-2.5 lg:px-4 lg:py-3 font-semibold leading-5 bg-brand text-sm lg:text-base border border-transparent rounded-base bg-[#000000] rounded-full cursor-pointer text-white hover:bg-[linear-gradient(90deg,#0FA1DB,#5C2D91)] transition-all duration-500 ease-in-out">Inquire Now</button> -->
+
+      <button type="button" class="relative overflow-hidden px-3 py-2.5 lg:px-4 lg:py-3 font-semibold leading-5 text-sm lg:text-base rounded-full bg-black text-white cursor-pointer group" >
+        <span class="absolute inset-0 bg-[linear-gradient(90deg,#0FA1DB,#5C2D91)] opacity-0 group-hover:opacity-100 transition-opacity duration-500 ease-in-out"></span>
+        <span class="relative z-10">Inquire Now</span>
+      </button>
       <button
         data-collapse-toggle="navbar-cta"
         type="button"
@@ -237,7 +242,7 @@ id="navbar-main"
         border border-[rgba(15,161,219,0.15)]
         rounded-2xl shadow-sm
         rtl:space-x-reverse
-        lg:flex-row lg:p-0 lg:space-x-4 xl:space-x-8
+        lg:flex-row lg:p-0 lg:space-x-2 xl:space-x-8
         lg:mt-0 lg:bg-transparent lg:border-0 lg:shadow-none space-y-2 lg:space-y-0"
     >
 
@@ -484,7 +489,7 @@ id="navbar-main"
   
   <!-- Dropdown menu -->
   <div id="dropdownNavbar" data-default="overview"  class="z-10 hidden  lg:min-h-[60vh] py-2 lg:px-[50px] grid grid-cols-12 rounded-base w-full! translate-y-[23px]">
-      <div class="lg:grid grid-cols-4 col-span-12 2xl:col-span-10 2xl:col-start-2 border border-[#CCCCCC] bg-[#F6FBFE] shadow-[0px_0px_6px_0px_rgba(0,0,0,0.15)] rounded-xl p-10  gap-[30px] xl:gap-10">
+      <div class="dropdown-inner lg:grid grid-cols-4 col-span-12 2xl:col-span-10 2xl:col-start-2 border border-[#CCCCCC] bg-[#F6FBFE] shadow-[0px_0px_6px_0px_rgba(0,0,0,0.15)] rounded-xl p-10  gap-[30px] xl:gap-10">
 
           <div class="space-y-8">
             <div class="space-y-5">
@@ -574,7 +579,7 @@ id="navbar-main"
   </div>
 
   <div id="WhatWeDoDropdown" data-default="about" class="z-10 hidden lg:min-h-[60vh] py-2 lg:px-[50px] grid grid-cols-12 rounded-base w-full! translate-y-[23px]">
-      <div class="lg:grid grid-cols-[2fr_2fr_2.5fr_3.5fr] col-span-12  2xl:col-span-10 2xl:col-start-2 border border-[#CCCCCC] bg-[#F6FBFE] shadow-[0px_0px_6px_0px_rgba(0,0,0,0.15)] rounded-xl p-10  gap-[30px] xl:gap-10">
+      <div class="dropdown-inner lg:grid grid-cols-[2fr_2fr_2.5fr_3.5fr] col-span-12  2xl:col-span-10 2xl:col-start-2 border border-[#CCCCCC] bg-[#F6FBFE] shadow-[0px_0px_6px_0px_rgba(0,0,0,0.15)] rounded-xl p-10  gap-[30px] xl:gap-10">
 
           <div class="space-y-8">
             <div class="space-y-5">
@@ -657,7 +662,7 @@ id="navbar-main"
   </div>
 
   <div id="ResourcesDropdown" data-default="resource-overview" class="z-10 hidden  lg:min-h-[60vh] py-2 lg:px-[50px] grid grid-cols-12 rounded-base w-full! translate-y-[23px]">
-      <div class="lg:grid grid-cols-4 col-span-12 2xl:col-span-10 2xl:col-start-2 border border-[#CCCCCC] bg-[#F6FBFE] shadow-[0px_0px_6px_0px_rgba(0,0,0,0.15)] rounded-xl p-10  gap-[30px] xl:gap-10">
+      <div class="dropdown-inner lg:grid grid-cols-4 col-span-12 2xl:col-span-10 2xl:col-start-2 border border-[#CCCCCC] bg-[#F6FBFE] shadow-[0px_0px_6px_0px_rgba(0,0,0,0.15)] rounded-xl p-10  gap-[30px] xl:gap-10">
           <div class="space-y-5 col-span-2">
             <p class="text-[#0FA1DB] font-semibold text-lg xl:text-xl border-b border-[#D0DDE2] pb-5">Case Study</p>
             <div class="grid grid-cols-2 gap-[30px]">
